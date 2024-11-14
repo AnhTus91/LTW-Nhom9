@@ -13,10 +13,10 @@ namespace DAWeb.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QlyWebBanGiayEntities : DbContext
+    public partial class QlyBanGiayEntities : DbContext
     {
-        public QlyWebBanGiayEntities()
-            : base("name=QlyWebBanGiayEntities")
+        public QlyBanGiayEntities()
+            : base("name=QlyBanGiayEntities")
         {
         }
     
@@ -25,11 +25,11 @@ namespace DAWeb.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ChiTietDonHang> ChiTietDonHang { get; set; }
-        public virtual DbSet<DanhMuc> DanhMuc { get; set; }
-        public virtual DbSet<DonHang> DonHang { get; set; }
-        public virtual DbSet<NguoiDung> NguoiDung { get; set; }
-        public virtual DbSet<SanPham> SanPham { get; set; }
-        public virtual DbSet<TaiKhoan> TaiKhoan { get; set; }
+        public virtual DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
+        public virtual DbSet<DanhMuc> DanhMucs { get; set; }
+        public virtual DbSet<DonHang> DonHangs { get; set; }
+        public virtual DbSet<NguoiDung> NguoiDungs { get; set; }
+        public virtual DbSet<SanPham> SanPhams { get; set; }
+        public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
     }
 }

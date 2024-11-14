@@ -9,10 +9,10 @@ namespace DAWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private QlyWebBanGiayEntities db = new QlyWebBanGiayEntities();
+        private QlyBanGiayEntities db = new QlyBanGiayEntities();
         public ActionResult Index()
         {
-            var sanPhams = db.SanPham.OrderByDescending(sp => sp.MaSanPham).ToList();
+            var sanPhams = db.SanPhams.OrderByDescending(sp => sp.MaSanPham).ToList();
             return View(sanPhams);
         }
         public ActionResult Search(string keyword)
@@ -21,7 +21,7 @@ namespace DAWeb.Controllers
             if (!string.IsNullOrEmpty(keyword))
             {
                 // Tìm kiếm sản phẩm theo tên
-                var sanPhams = db.SanPham
+                var sanPhams = db.SanPhams
                                  .Where(sp => sp.TenSanPham.Contains(keyword))
                                  .OrderByDescending(sp => sp.MaSanPham)
                                  .ToList();
@@ -41,5 +41,9 @@ namespace DAWeb.Controllers
 
         //    return View(sanPham); //
         //}
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
     }
 }

@@ -12,12 +12,12 @@ namespace DAWeb.Areas.Admin.Controllers
 {
     public class NguoiDungsController : Controller
     {
-        private QlyWebBanGiayEntities db = new QlyWebBanGiayEntities();
+        private QlyBanGiayEntities db = new QlyBanGiayEntities();
 
         // GET: Admin/NguoiDungs
         public ActionResult Index()
         {
-            var nguoiDung = db.NguoiDung.Include(n => n.TaiKhoan);
+            var nguoiDung = db.NguoiDungs.Include(n => n.TaiKhoan);
             return View(nguoiDung.ToList());
         }
 
@@ -28,7 +28,7 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NguoiDung nguoiDung = db.NguoiDung.Find(id);
+            NguoiDung nguoiDung = db.NguoiDungs.Find(id);
             if (nguoiDung == null)
             {
                 return HttpNotFound();
@@ -39,7 +39,7 @@ namespace DAWeb.Areas.Admin.Controllers
         // GET: Admin/NguoiDungs/Create
         public ActionResult Create()
         {
-            ViewBag.MaTaiKhoan = new SelectList(db.TaiKhoan, "MaTaiKhoan", "TenDangNhap");
+            ViewBag.MaTaiKhoan = new SelectList(db.TaiKhoans, "MaTaiKhoan", "TenDangNhap");
             return View();
         }
 
@@ -52,12 +52,12 @@ namespace DAWeb.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.NguoiDung.Add(nguoiDung);
+                db.NguoiDungs.Add(nguoiDung);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MaTaiKhoan = new SelectList(db.TaiKhoan, "MaTaiKhoan", "TenDangNhap", nguoiDung.MaTaiKhoan);
+            ViewBag.MaTaiKhoan = new SelectList(db.TaiKhoans, "MaTaiKhoan", "TenDangNhap", nguoiDung.MaTaiKhoan);
             return View(nguoiDung);
         }
 
@@ -68,12 +68,12 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NguoiDung nguoiDung = db.NguoiDung.Find(id);
+            NguoiDung nguoiDung = db.NguoiDungs.Find(id);
             if (nguoiDung == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.MaTaiKhoan = new SelectList(db.TaiKhoan, "MaTaiKhoan", "TenDangNhap", nguoiDung.MaTaiKhoan);
+            ViewBag.MaTaiKhoan = new SelectList(db.TaiKhoans, "MaTaiKhoan", "TenDangNhap", nguoiDung.MaTaiKhoan);
             return View(nguoiDung);
         }
 
@@ -90,7 +90,7 @@ namespace DAWeb.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MaTaiKhoan = new SelectList(db.TaiKhoan, "MaTaiKhoan", "TenDangNhap", nguoiDung.MaTaiKhoan);
+            ViewBag.MaTaiKhoan = new SelectList(db.TaiKhoans, "MaTaiKhoan", "TenDangNhap", nguoiDung.MaTaiKhoan);
             return View(nguoiDung);
         }
 
@@ -101,7 +101,7 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NguoiDung nguoiDung = db.NguoiDung.Find(id);
+            NguoiDung nguoiDung = db.NguoiDungs.Find(id);
             if (nguoiDung == null)
             {
                 return HttpNotFound();
@@ -114,8 +114,8 @@ namespace DAWeb.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            NguoiDung nguoiDung = db.NguoiDung.Find(id);
-            db.NguoiDung.Remove(nguoiDung);
+            NguoiDung nguoiDung = db.NguoiDungs.Find(id);
+            db.NguoiDungs.Remove(nguoiDung);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

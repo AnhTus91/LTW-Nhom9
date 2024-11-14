@@ -17,7 +17,7 @@ namespace DAWeb.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TaiKhoan()
         {
-            this.NguoiDung = new HashSet<NguoiDung>();
+            this.NguoiDungs = new HashSet<NguoiDung>();
         }
     
         public int MaTaiKhoan { get; set; }
@@ -27,6 +27,6 @@ namespace DAWeb.Models
         public string VaiTro { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NguoiDung> NguoiDung { get; set; }
+        public virtual ICollection<NguoiDung> NguoiDungs { get; set; }
     }
 }

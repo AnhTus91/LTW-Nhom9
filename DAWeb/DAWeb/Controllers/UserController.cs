@@ -12,7 +12,7 @@ namespace DAWeb.Controllers
 {
     public class UserController : Controller
     {
-        QlyWebBanGiayEntities db = new QlyWebBanGiayEntities();
+        QlyBanGiayEntities db = new QlyBanGiayEntities();
 
         // GET: User
         public ActionResult Index()
@@ -33,7 +33,7 @@ namespace DAWeb.Controllers
             if (ModelState.IsValid)
             {
                 // Kiểm tra xem email đã tồn tại chưa
-                var existingAccount = db.TaiKhoan.FirstOrDefault(s => s.Email == model.Email);
+                var existingAccount = db.TaiKhoans.FirstOrDefault(s => s.Email == model.Email);
                 if (existingAccount == null)
                 {
                     // Tạo tài khoản mới
@@ -45,7 +45,7 @@ namespace DAWeb.Controllers
                         VaiTro = "user" // Gán vai trò là người dùng thông thường
                     };
 
-                    db.TaiKhoan.Add(newAccount);
+                    db.TaiKhoans.Add(newAccount);
                     db.SaveChanges();
 
                     // Tạo thông tin người dùng tương ứng với tài khoản
@@ -77,7 +77,7 @@ namespace DAWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var account = db.TaiKhoan
+                var account = db.TaiKhoans
                     .FirstOrDefault(s => s.TenDangNhap == model.TenDangNhap && s.MatKhau == model.MatKhau);
 
                 if (account != null)
@@ -131,8 +131,8 @@ namespace DAWeb.Controllers
             }
 
             // Lấy tài khoản và thông tin người dùng
-            TaiKhoan taiKhoan = db.TaiKhoan.FirstOrDefault(tk => tk.Email == email);
-            NguoiDung nguoiDung = db.NguoiDung.FirstOrDefault(nd => nd.MaTaiKhoan == taiKhoan.MaTaiKhoan);
+            TaiKhoan taiKhoan = db.TaiKhoans.FirstOrDefault(tk => tk.Email == email);
+            NguoiDung nguoiDung = db.NguoiDungs.FirstOrDefault(nd => nd.MaTaiKhoan == taiKhoan.MaTaiKhoan);
 
             // Nếu người dùng chưa có thông tin thì chuyển sang CreateUserDetails
             if (nguoiDung == null)
@@ -150,7 +150,7 @@ namespace DAWeb.Controllers
 
 
             // Kiểm tra tài khoản
-            TaiKhoan taiKhoan = db.TaiKhoan.FirstOrDefault(tk => tk.Email == email);
+            TaiKhoan taiKhoan = db.TaiKhoans.FirstOrDefault(tk => tk.Email == email);
             if (taiKhoan == null)
             {
                 return RedirectToAction("Login", "User");
@@ -187,7 +187,7 @@ namespace DAWeb.Controllers
 
                 }
                 // Lưu thông tin người dùng vào cơ sở dữ liệu
-                db.NguoiDung.Add(nguoiDung);
+                db.NguoiDungs.Add(nguoiDung);
                 db.SaveChanges();
 
                 // Sau khi lưu, chuyển hướng đến trang chi tiết người dùng
@@ -207,8 +207,8 @@ namespace DAWeb.Controllers
             }
 
             // Lấy tài khoản
-            TaiKhoan taiKhoan = db.TaiKhoan.FirstOrDefault(tk => tk.Email == email);
-            NguoiDung nguoiDung = db.NguoiDung.FirstOrDefault(nd => nd.MaTaiKhoan == taiKhoan.MaTaiKhoan);
+            TaiKhoan taiKhoan = db.TaiKhoans.FirstOrDefault(tk => tk.Email == email);
+            NguoiDung nguoiDung = db.NguoiDungs.FirstOrDefault(nd => nd.MaTaiKhoan == taiKhoan.MaTaiKhoan);
 
 
             return View(nguoiDung);
@@ -234,7 +234,7 @@ namespace DAWeb.Controllers
                     nguoiDung.AnhDaiDien = Path.Combine("/Images", fileName);
                 }
                 // Tìm người dùng hiện tại trong cơ sở dữ liệu
-                var existingUser = db.NguoiDung.Find(nguoiDung.MaNguoiDung);
+                var existingUser = db.NguoiDungs.Find(nguoiDung.MaNguoiDung);
                 if (existingUser != null)
                 {
                     existingUser.HoTen = nguoiDung.HoTen;
@@ -258,13 +258,13 @@ namespace DAWeb.Controllers
                 return RedirectToAction("Login", "User");
             }
 
-            var donHangList = db.DonHang.Where(dh => dh.MaNguoiDung == id).OrderByDescending(dh => dh.NgayDat).ToList();
+            var donHangList = db.DonHangs.Where(dh => dh.MaNguoiDung == id).OrderByDescending(dh => dh.NgayDat).ToList();
 
             return View(donHangList);
         }
         public ActionResult OrderDetails(int id)
         {
-            var donHang = db.DonHang.Include("ChiTietDonHang.SanPham").FirstOrDefault(d => d.MaDonHang == id);
+            var donHang = db.DonHangs.Include("ChiTietDonHang.SanPham").FirstOrDefault(d => d.MaDonHang == id);
 
 
             if (donHang == null)
@@ -272,14 +272,14 @@ namespace DAWeb.Controllers
                 return HttpNotFound();
             }
 
-            ViewBag.ChiTietDonHang = donHang.ChiTietDonHang.ToList();
+            ViewBag.ChiTietDonHang = donHang.ChiTietDonHangs.ToList();
             return View(donHang);
         }
 
         public ActionResult CancelOrder(int id)
         {
             
-            var donHang = db.DonHang.FirstOrDefault(dh => dh.MaDonHang == id);
+            var donHang = db.DonHangs.FirstOrDefault(dh => dh.MaDonHang == id);
 
             if (donHang == null)
             {

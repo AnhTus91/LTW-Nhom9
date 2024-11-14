@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QlyWebBanGiayModelStoreContainer" CdmEntityContainer="QlyWebBanGiayEntities">
-    <EntitySetMapping Name="ChiTietDonHang">
-      <EntityTypeMapping TypeName="QlyWebBanGiayModel.ChiTietDonHang">
+  <EntityContainerMapping StorageEntityContainer="QlyBanGiayModelStoreContainer" CdmEntityContainer="QlyBanGiayEntities">
+    <EntitySetMapping Name="ChiTietDonHangs">
+      <EntityTypeMapping TypeName="QlyBanGiayModel.ChiTietDonHang">
         <MappingFragment StoreEntitySet="ChiTietDonHang">
           <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
           <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
@@ -12,16 +12,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DanhMuc">
-      <EntityTypeMapping TypeName="QlyWebBanGiayModel.DanhMuc">
+    <EntitySetMapping Name="DanhMucs">
+      <EntityTypeMapping TypeName="QlyBanGiayModel.DanhMuc">
         <MappingFragment StoreEntitySet="DanhMuc">
           <ScalarProperty Name="MaDanhMuc" ColumnName="MaDanhMuc" />
           <ScalarProperty Name="TenDanhMuc" ColumnName="TenDanhMuc" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DonHang">
-      <EntityTypeMapping TypeName="QlyWebBanGiayModel.DonHang">
+    <EntitySetMapping Name="DonHangs">
+      <EntityTypeMapping TypeName="QlyBanGiayModel.DonHang">
         <MappingFragment StoreEntitySet="DonHang">
           <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
           <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
@@ -31,8 +31,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="NguoiDung">
-      <EntityTypeMapping TypeName="QlyWebBanGiayModel.NguoiDung">
+    <EntitySetMapping Name="NguoiDungs">
+      <EntityTypeMapping TypeName="QlyBanGiayModel.NguoiDung">
         <MappingFragment StoreEntitySet="NguoiDung">
           <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
@@ -43,8 +43,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SanPham">
-      <EntityTypeMapping TypeName="QlyWebBanGiayModel.SanPham">
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="QlyBanGiayModel.SanPham">
         <MappingFragment StoreEntitySet="SanPham">
           <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
           <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
@@ -56,8 +56,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TaiKhoan">
-      <EntityTypeMapping TypeName="QlyWebBanGiayModel.TaiKhoan">
+    <EntitySetMapping Name="TaiKhoans">
+      <EntityTypeMapping TypeName="QlyBanGiayModel.TaiKhoan">
         <MappingFragment StoreEntitySet="TaiKhoan">
           <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
           <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />

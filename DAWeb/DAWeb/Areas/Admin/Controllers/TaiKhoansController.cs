@@ -23,12 +23,12 @@ namespace DAWeb.Areas.Admin.Controllers
             }
             base.OnActionExecuting(filterContext);
         }
-        private QlyWebBanGiayEntities db = new QlyWebBanGiayEntities();
+        private QlyBanGiayEntities db = new QlyBanGiayEntities();
 
         // GET: Admin/TaiKhoans
         public ActionResult Index()
         {
-            return View(db.TaiKhoan.ToList());
+            return View(db.TaiKhoans.ToList());
         }
 
         // GET: Admin/TaiKhoans/Details/5
@@ -38,7 +38,7 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaiKhoan taiKhoan = db.TaiKhoan.Find(id);
+            TaiKhoan taiKhoan = db.TaiKhoans.Find(id);
             if (taiKhoan == null)
             {
                 return HttpNotFound();
@@ -61,7 +61,7 @@ namespace DAWeb.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.TaiKhoan.Add(taiKhoan);
+                db.TaiKhoans.Add(taiKhoan);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -76,7 +76,7 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaiKhoan taiKhoan = db.TaiKhoan.Find(id);
+            TaiKhoan taiKhoan = db.TaiKhoans.Find(id);
             if (taiKhoan == null)
             {
                 return HttpNotFound();
@@ -107,7 +107,7 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaiKhoan taiKhoan = db.TaiKhoan.Find(id);
+            TaiKhoan taiKhoan = db.TaiKhoans.Find(id);
             if (taiKhoan == null)
             {
                 return HttpNotFound();
@@ -120,16 +120,16 @@ namespace DAWeb.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TaiKhoan taiKhoan = db.TaiKhoan.Find(id);
+            TaiKhoan taiKhoan = db.TaiKhoans.Find(id);
 
-            var nguoiDungs = db.NguoiDung.Where(nd => nd.MaTaiKhoan == id).ToList();
+            var nguoiDungs = db.NguoiDungs.Where(nd => nd.MaTaiKhoan == id).ToList();
             foreach (var nguoiDung in nguoiDungs)
             {
                 nguoiDung.MaTaiKhoan = null; // Or you can choose to delete them: db.NguoiDung.Remove(nguoiDung);
             }
 
             db.SaveChanges();
-            db.TaiKhoan.Remove(taiKhoan);
+            db.TaiKhoans.Remove(taiKhoan);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

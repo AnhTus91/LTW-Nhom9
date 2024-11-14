@@ -13,14 +13,14 @@ namespace DAWeb.Areas.Admin.Controllers
 {
     public class SanPhamsController : Controller
     {
-        private QlyWebBanGiayEntities db = new QlyWebBanGiayEntities();
+        private QlyBanGiayEntities db = new QlyBanGiayEntities();
 
         
 
         // GET: Admin/SanPhams
         public ActionResult Index()
         {
-            var sanPham = db.SanPham.Include(s => s.DanhMuc);
+            var sanPham = db.SanPhams.Include(s => s.DanhMuc);
             return View(sanPham.ToList());
         }
 
@@ -28,7 +28,7 @@ namespace DAWeb.Areas.Admin.Controllers
         public ActionResult Details(int id)
         {
             // Tìm sản phẩm theo ID
-            SanPham sanPham = db.SanPham.Find(id);
+            SanPham sanPham = db.SanPhams.Find(id);
             if (sanPham == null)
             {
                 return HttpNotFound(); // Nếu không tìm thấy sản phẩm, trả về lỗi 404
@@ -39,7 +39,7 @@ namespace DAWeb.Areas.Admin.Controllers
         // GET: Admin/SanPhams/Create
         public ActionResult Create()
         {
-            ViewBag.MaDanhMuc = new SelectList(db.DanhMuc, "MaDanhMuc", "TenDanhMuc");
+            ViewBag.MaDanhMuc = new SelectList(db.DanhMucs, "MaDanhMuc", "TenDanhMuc");
             return View();
         }
 
@@ -73,12 +73,12 @@ namespace DAWeb.Areas.Admin.Controllers
                     sanPham.AnhSanPham = "/images/" + fileName;
                 }
 
-                db.SanPham.Add(sanPham);
+                db.SanPhams.Add(sanPham);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MaDanhMuc = new SelectList(db.DanhMuc, "MaDanhMuc", "TenDanhMuc", sanPham.MaDanhMuc);
+            ViewBag.MaDanhMuc = new SelectList(db.DanhMucs, "MaDanhMuc", "TenDanhMuc", sanPham.MaDanhMuc);
             return View(sanPham);
         }
 
@@ -91,12 +91,12 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SanPham sanPham = db.SanPham.Find(id);
+            SanPham sanPham = db.SanPhams.Find(id);
             if (sanPham == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.MaDanhMuc = new SelectList(db.DanhMuc, "MaDanhMuc", "TenDanhMuc", sanPham.MaDanhMuc);
+            ViewBag.MaDanhMuc = new SelectList(db.DanhMucs, "MaDanhMuc", "TenDanhMuc", sanPham.MaDanhMuc);
             return View(sanPham);
         }
 
@@ -132,7 +132,7 @@ namespace DAWeb.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MaDanhMuc = new SelectList(db.DanhMuc, "MaDanhMuc", "TenDanhMuc", sanPham.MaDanhMuc);
+            ViewBag.MaDanhMuc = new SelectList(db.DanhMucs, "MaDanhMuc", "TenDanhMuc", sanPham.MaDanhMuc);
             return View(sanPham);
         }
 
@@ -143,7 +143,7 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SanPham sanPham = db.SanPham.Find(id);
+            SanPham sanPham = db.SanPhams.Find(id);
             if (sanPham == null)
             {
                 return HttpNotFound();
@@ -156,8 +156,8 @@ namespace DAWeb.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            SanPham sanPham = db.SanPham.Find(id);
-            db.SanPham.Remove(sanPham);
+            SanPham sanPham = db.SanPhams.Find(id);
+            db.SanPhams.Remove(sanPham);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -10,7 +10,7 @@ namespace DAWeb.Controllers
 {
     public class ProductController : Controller
     {
-        QlyWebBanGiayEntities db = new QlyWebBanGiayEntities();
+        QlyBanGiayEntities db = new QlyBanGiayEntities();
         // GET: Product
         public ActionResult Index()
         {
@@ -19,7 +19,7 @@ namespace DAWeb.Controllers
         public ActionResult RecommendedItems(int categoryId)
         {
             // Lấy danh sách sản phẩm theo danh mục
-            var recommendedProducts = db.SanPham
+            var recommendedProducts = db.SanPhams
           .Where(sp => sp.MaDanhMuc == categoryId)
           .OrderBy(x => Guid.NewGuid())
           .Take(3)
@@ -29,7 +29,7 @@ namespace DAWeb.Controllers
         }
         public ActionResult ChiTietSanPham(int id)
         {
-            var sanPham = db.SanPham.Find(id);
+            var sanPham = db.SanPhams.Find(id);
             if (sanPham == null)
             {
                 return HttpNotFound(); // Nếu không tìm thấy sản phẩm, trả về 404
@@ -40,14 +40,14 @@ namespace DAWeb.Controllers
         public ActionResult SanPhamTheoDanhMuc(int categoryId)
         {
             // Lấy danh sách sản phẩm theo categoryId từ cơ sở dữ liệu
-            var products = db.SanPham.Where(sp => sp.MaDanhMuc == categoryId).ToList();
+            var products = db.SanPhams.Where(sp => sp.MaDanhMuc == categoryId).ToList();
             return View(products);
         }
 
         
         public ActionResult PurchaseProduct(int productId, int quantity)
         {
-            var product = db.SanPham.Find(productId);
+            var product = db.SanPhams.Find(productId);
             if (product == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Product not found");

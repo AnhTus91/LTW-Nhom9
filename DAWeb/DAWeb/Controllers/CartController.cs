@@ -8,7 +8,7 @@ namespace DAWeb.Controllers
 
     public class CartController : Controller
     {
-        QlyWebBanGiayEntities db = new QlyWebBanGiayEntities();
+        QlyBanGiayEntities db = new QlyBanGiayEntities();
 
         // Retrieve the cart from session
         private GioHang GetCart()
@@ -31,7 +31,7 @@ namespace DAWeb.Controllers
                 return RedirectToAction("Login", "User");
             }
 
-            SanPham product = db.SanPham.Find(productId);
+            SanPham product = db.SanPhams.Find(productId);
             if (product != null)
             {
                 GetCart().AddItem(product, quantity);
@@ -96,12 +96,12 @@ namespace DAWeb.Controllers
 
             
 
-            using (QlyWebBanGiayEntities db = new QlyWebBanGiayEntities())
+            using (QlyBanGiayEntities db = new QlyBanGiayEntities())
             {
                 // Lấy mã người dùng từ session (hoặc thông tin đăng nhập)
                 int MaTaiKhoan  = (int)(Session["MaNguoiDung"] ?? 0); // Giả định mã người dùng đã lưu trong session
-                TaiKhoan tk = db.TaiKhoan.FirstOrDefault(mtk => mtk.MaTaiKhoan == MaTaiKhoan);
-                NguoiDung nd = db.NguoiDung.FirstOrDefault(mnd => mnd.MaTaiKhoan == tk.MaTaiKhoan);
+                TaiKhoan tk = db.TaiKhoans.FirstOrDefault(mtk => mtk.MaTaiKhoan == MaTaiKhoan);
+                NguoiDung nd = db.NguoiDungs.FirstOrDefault(mnd => mnd.MaTaiKhoan == tk.MaTaiKhoan);
                 
 
                 // Tạo đối tượng DonHang và gán thông tin khách hàng
@@ -114,7 +114,7 @@ namespace DAWeb.Controllers
                 };
 
                 // Thêm đơn hàng vào cơ sở dữ liệu
-                db.DonHang.Add(order);
+                db.DonHangs.Add(order);
                 db.SaveChanges(); // Lưu đơn hàng trước để có mã đơn hàng
                 foreach (var item in cart.Items)
                 {
@@ -126,7 +126,7 @@ namespace DAWeb.Controllers
                         DonGia = (int)item.Gia,
                         TongTien = cart.GetTotalPrice(),
                     };
-                    db.ChiTietDonHang.Add(orderDetail);
+                    db.ChiTietDonHangs.Add(orderDetail);
                 }
 
                 db.SaveChanges();

@@ -9,14 +9,14 @@ namespace DAWeb.Areas.Admin.Controllers
 {
     public class HomeAdminController : Controller
     {
-        QlyWebBanGiayEntities db = new QlyWebBanGiayEntities();
+        QlyBanGiayEntities db = new QlyBanGiayEntities();
 
         // GET: Admin/HomeAdmin
         public ActionResult Index()
         {
-            var donhang = db.DonHang;
-            int demSanPham = db.SanPham.Count();
-            int demUser = db.NguoiDung.Count();
+            var donhang = db.DonHangs;
+            int demSanPham = db.SanPhams.Count();
+            int demUser = db.NguoiDungs.Count();
             int demDonHang = donhang.Count();
             
 

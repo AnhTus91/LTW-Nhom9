@@ -12,12 +12,12 @@ namespace DAWeb.Areas.Admin.Controllers
 {
     public class DonHangsController : Controller
     {
-        private QlyWebBanGiayEntities db = new QlyWebBanGiayEntities();
+        private QlyBanGiayEntities db = new QlyBanGiayEntities();
 
         // GET: Admin/DonHangs
         public ActionResult Index()
         {
-            var donHang = db.DonHang.Include(d => d.NguoiDung);
+            var donHang = db.DonHangs.Include(d => d.NguoiDung);
             return View(donHang.ToList());
         }
 
@@ -28,7 +28,7 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DonHang donHang = db.DonHang.Find(id);
+            DonHang donHang = db.DonHangs.Find(id);
             if (donHang == null)
             {
                 return HttpNotFound();
@@ -39,7 +39,7 @@ namespace DAWeb.Areas.Admin.Controllers
         // GET: Admin/DonHangs/Create
         public ActionResult Create()
         {
-            ViewBag.MaNguoiDung = new SelectList(db.NguoiDung, "MaNguoiDung", "HoTen");
+            ViewBag.MaNguoiDung = new SelectList(db.NguoiDungs, "MaNguoiDung", "HoTen");
             return View();
         }
 
@@ -52,12 +52,12 @@ namespace DAWeb.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.DonHang.Add(donHang);
+                db.DonHangs.Add(donHang);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.MaNguoiDung = new SelectList(db.NguoiDung, "MaNguoiDung", "HoTen", donHang.MaNguoiDung);
+            ViewBag.MaNguoiDung = new SelectList(db.NguoiDungs, "MaNguoiDung", "HoTen", donHang.MaNguoiDung);
             return View(donHang);
         }
 
@@ -69,12 +69,12 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DonHang donHang = db.DonHang.Find(id);
+            DonHang donHang = db.DonHangs.Find(id);
             if (donHang == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.MaNguoiDung = new SelectList(db.NguoiDung, "MaNguoiDung", "HoTen", donHang.MaNguoiDung);
+            ViewBag.MaNguoiDung = new SelectList(db.NguoiDungs, "MaNguoiDung", "HoTen", donHang.MaNguoiDung);
             ViewBag.TrangThaiOptions = GetStatusOptions(); // Thêm dòng này
             return View(donHang);
         }
@@ -92,7 +92,7 @@ namespace DAWeb.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MaNguoiDung = new SelectList(db.NguoiDung, "MaNguoiDung", "HoTen", donHang.MaNguoiDung);
+            ViewBag.MaNguoiDung = new SelectList(db.NguoiDungs, "MaNguoiDung", "HoTen", donHang.MaNguoiDung);
             return View(donHang);
         }
 
@@ -103,7 +103,7 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DonHang donHang = db.DonHang.Find(id);
+            DonHang donHang = db.DonHangs.Find(id);
             if (donHang == null)
             {
                 return HttpNotFound();
@@ -116,8 +116,8 @@ namespace DAWeb.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            DonHang donHang = db.DonHang.Find(id);
-            db.DonHang.Remove(donHang);
+            DonHang donHang = db.DonHangs.Find(id);
+            db.DonHangs.Remove(donHang);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

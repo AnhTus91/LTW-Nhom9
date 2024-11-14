@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QlyWebBanGiayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QlyBanGiayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChiTietDonHang">
           <Key>
             <PropertyRef Name="MaDonHang" />
@@ -30,7 +30,7 @@
           <Property Name="MaDonHang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NgayDat" Type="date" Nullable="false" />
           <Property Name="TongTien" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="TrangThai" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TrangThai" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="MaNguoiDung" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="NguoiDung">
@@ -66,7 +66,7 @@
           <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="VaiTro" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
-        <Association Name="FK__ChiTietDo__MaDon__5DCAEF64">
+        <Association Name="FK__ChiTietDo__MaDon__5535A963">
           <End Role="DonHang" Type="Self.DonHang" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -80,7 +80,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ChiTietDo__MaSan__5EBF139D">
+        <Association Name="FK__ChiTietDo__MaSan__5629CD9C">
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -94,7 +94,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DonHang__MaNguoi__440B1D61">
+        <Association Name="FK__DonHang__MaNguoi__571DF1D5">
           <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
           <End Role="DonHang" Type="Self.DonHang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -106,7 +106,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NguoiDung__MaTai__3B75D760">
+        <Association Name="FK__NguoiDung__MaTai__5812160E">
           <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
           <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="*" />
           <ReferentialConstraint>
@@ -118,7 +118,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SanPham__MaDanhM__403A8C7D">
+        <Association Name="FK__SanPham__MaDanhM__59063A47">
           <End Role="DanhMuc" Type="Self.DanhMuc" Multiplicity="0..1" />
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
           <ReferentialConstraint>
@@ -130,30 +130,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QlyWebBanGiayModelStoreContainer">
+        <EntityContainer Name="QlyBanGiayModelStoreContainer">
           <EntitySet Name="ChiTietDonHang" EntityType="Self.ChiTietDonHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DanhMuc" EntityType="Self.DanhMuc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DonHang" EntityType="Self.DonHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NguoiDung" EntityType="Self.NguoiDung" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__ChiTietDo__MaDon__5DCAEF64" Association="Self.FK__ChiTietDo__MaDon__5DCAEF64">
+          <AssociationSet Name="FK__ChiTietDo__MaDon__5535A963" Association="Self.FK__ChiTietDo__MaDon__5535A963">
             <End Role="DonHang" EntitySet="DonHang" />
             <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />
           </AssociationSet>
-          <AssociationSet Name="FK__ChiTietDo__MaSan__5EBF139D" Association="Self.FK__ChiTietDo__MaSan__5EBF139D">
+          <AssociationSet Name="FK__ChiTietDo__MaSan__5629CD9C" Association="Self.FK__ChiTietDo__MaSan__5629CD9C">
             <End Role="SanPham" EntitySet="SanPham" />
             <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />
           </AssociationSet>
-          <AssociationSet Name="FK__DonHang__MaNguoi__440B1D61" Association="Self.FK__DonHang__MaNguoi__440B1D61">
+          <AssociationSet Name="FK__DonHang__MaNguoi__571DF1D5" Association="Self.FK__DonHang__MaNguoi__571DF1D5">
             <End Role="NguoiDung" EntitySet="NguoiDung" />
             <End Role="DonHang" EntitySet="DonHang" />
           </AssociationSet>
-          <AssociationSet Name="FK__NguoiDung__MaTai__3B75D760" Association="Self.FK__NguoiDung__MaTai__3B75D760">
+          <AssociationSet Name="FK__NguoiDung__MaTai__5812160E" Association="Self.FK__NguoiDung__MaTai__5812160E">
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
             <End Role="NguoiDung" EntitySet="NguoiDung" />
           </AssociationSet>
-          <AssociationSet Name="FK__SanPham__MaDanhM__403A8C7D" Association="Self.FK__SanPham__MaDanhM__403A8C7D">
+          <AssociationSet Name="FK__SanPham__MaDanhM__59063A47" Association="Self.FK__SanPham__MaDanhM__59063A47">
             <End Role="DanhMuc" EntitySet="DanhMuc" />
             <End Role="SanPham" EntitySet="SanPham" />
           </AssociationSet>
@@ -162,7 +162,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="QlyWebBanGiayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="QlyBanGiayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ChiTietDonHang">
           <Key>
             <PropertyRef Name="MaDonHang" />
@@ -173,8 +173,8 @@
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
           <Property Name="DonGia" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="TongTien" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <NavigationProperty Name="DonHang" Relationship="Self.FK__ChiTietDo__MaDon__5DCAEF64" FromRole="ChiTietDonHang" ToRole="DonHang" />
-          <NavigationProperty Name="SanPham" Relationship="Self.FK__ChiTietDo__MaSan__5EBF139D" FromRole="ChiTietDonHang" ToRole="SanPham" />
+          <NavigationProperty Name="DonHang" Relationship="Self.FK__ChiTietDo__MaDon__5535A963" FromRole="ChiTietDonHang" ToRole="DonHang" />
+          <NavigationProperty Name="SanPham" Relationship="Self.FK__ChiTietDo__MaSan__5629CD9C" FromRole="ChiTietDonHang" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="DanhMuc">
           <Key>
@@ -182,7 +182,7 @@
           </Key>
           <Property Name="MaDanhMuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenDanhMuc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="SanPham" Relationship="Self.FK__SanPham__MaDanhM__403A8C7D" FromRole="DanhMuc" ToRole="SanPham" />
+          <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__MaDanhM__59063A47" FromRole="DanhMuc" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="DonHang">
           <Key>
@@ -191,10 +191,10 @@
           <Property Name="MaDonHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NgayDat" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="TongTien" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaNguoiDung" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ChiTietDonHang" Relationship="Self.FK__ChiTietDo__MaDon__5DCAEF64" FromRole="DonHang" ToRole="ChiTietDonHang" />
-          <NavigationProperty Name="NguoiDung" Relationship="Self.FK__DonHang__MaNguoi__440B1D61" FromRole="DonHang" ToRole="NguoiDung" />
+          <NavigationProperty Name="ChiTietDonHangs" Relationship="Self.FK__ChiTietDo__MaDon__5535A963" FromRole="DonHang" ToRole="ChiTietDonHang" />
+          <NavigationProperty Name="NguoiDung" Relationship="Self.FK__DonHang__MaNguoi__571DF1D5" FromRole="DonHang" ToRole="NguoiDung" />
         </EntityType>
         <EntityType Name="NguoiDung">
           <Key>
@@ -206,8 +206,8 @@
           <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="AnhDaiDien" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="MaTaiKhoan" Type="Int32" />
-          <NavigationProperty Name="DonHang" Relationship="Self.FK__DonHang__MaNguoi__440B1D61" FromRole="NguoiDung" ToRole="DonHang" />
-          <NavigationProperty Name="TaiKhoan" Relationship="Self.FK__NguoiDung__MaTai__3B75D760" FromRole="NguoiDung" ToRole="TaiKhoan" />
+          <NavigationProperty Name="DonHangs" Relationship="Self.FK__DonHang__MaNguoi__571DF1D5" FromRole="NguoiDung" ToRole="DonHang" />
+          <NavigationProperty Name="TaiKhoan" Relationship="Self.FK__NguoiDung__MaTai__5812160E" FromRole="NguoiDung" ToRole="TaiKhoan" />
         </EntityType>
         <EntityType Name="SanPham">
           <Key>
@@ -220,8 +220,8 @@
           <Property Name="SoLuongTon" Type="Int32" Nullable="false" />
           <Property Name="AnhSanPham" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="MaDanhMuc" Type="Int32" />
-          <NavigationProperty Name="ChiTietDonHang" Relationship="Self.FK__ChiTietDo__MaSan__5EBF139D" FromRole="SanPham" ToRole="ChiTietDonHang" />
-          <NavigationProperty Name="DanhMuc" Relationship="Self.FK__SanPham__MaDanhM__403A8C7D" FromRole="SanPham" ToRole="DanhMuc" />
+          <NavigationProperty Name="ChiTietDonHangs" Relationship="Self.FK__ChiTietDo__MaSan__5629CD9C" FromRole="SanPham" ToRole="ChiTietDonHang" />
+          <NavigationProperty Name="DanhMuc" Relationship="Self.FK__SanPham__MaDanhM__59063A47" FromRole="SanPham" ToRole="DanhMuc" />
         </EntityType>
         <EntityType Name="TaiKhoan">
           <Key>
@@ -232,9 +232,9 @@
           <Property Name="MatKhau" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="VaiTro" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="NguoiDung" Relationship="Self.FK__NguoiDung__MaTai__3B75D760" FromRole="TaiKhoan" ToRole="NguoiDung" />
+          <NavigationProperty Name="NguoiDungs" Relationship="Self.FK__NguoiDung__MaTai__5812160E" FromRole="TaiKhoan" ToRole="NguoiDung" />
         </EntityType>
-        <Association Name="FK__ChiTietDo__MaDon__5DCAEF64">
+        <Association Name="FK__ChiTietDo__MaDon__5535A963">
           <End Role="DonHang" Type="Self.DonHang" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -248,7 +248,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ChiTietDo__MaSan__5EBF139D">
+        <Association Name="FK__ChiTietDo__MaSan__5629CD9C">
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -262,7 +262,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SanPham__MaDanhM__403A8C7D">
+        <Association Name="FK__SanPham__MaDanhM__59063A47">
           <End Role="DanhMuc" Type="Self.DanhMuc" Multiplicity="0..1" />
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
           <ReferentialConstraint>
@@ -274,7 +274,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DonHang__MaNguoi__440B1D61">
+        <Association Name="FK__DonHang__MaNguoi__571DF1D5">
           <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
           <End Role="DonHang" Type="Self.DonHang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -286,7 +286,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__NguoiDung__MaTai__3B75D760">
+        <Association Name="FK__NguoiDung__MaTai__5812160E">
           <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
           <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="*" />
           <ReferentialConstraint>
@@ -298,32 +298,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QlyWebBanGiayEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ChiTietDonHang" EntityType="Self.ChiTietDonHang" />
-          <EntitySet Name="DanhMuc" EntityType="Self.DanhMuc" />
-          <EntitySet Name="DonHang" EntityType="Self.DonHang" />
-          <EntitySet Name="NguoiDung" EntityType="Self.NguoiDung" />
-          <EntitySet Name="SanPham" EntityType="Self.SanPham" />
-          <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" />
-          <AssociationSet Name="FK__ChiTietDo__MaDon__5DCAEF64" Association="Self.FK__ChiTietDo__MaDon__5DCAEF64">
-            <End Role="DonHang" EntitySet="DonHang" />
-            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />
+        <EntityContainer Name="QlyBanGiayEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHang" />
+          <EntitySet Name="DanhMucs" EntityType="Self.DanhMuc" />
+          <EntitySet Name="DonHangs" EntityType="Self.DonHang" />
+          <EntitySet Name="NguoiDungs" EntityType="Self.NguoiDung" />
+          <EntitySet Name="SanPhams" EntityType="Self.SanPham" />
+          <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
+          <AssociationSet Name="FK__ChiTietDo__MaDon__5535A963" Association="Self.FK__ChiTietDo__MaDon__5535A963">
+            <End Role="DonHang" EntitySet="DonHangs" />
+            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
           </AssociationSet>
-          <AssociationSet Name="FK__ChiTietDo__MaSan__5EBF139D" Association="Self.FK__ChiTietDo__MaSan__5EBF139D">
-            <End Role="SanPham" EntitySet="SanPham" />
-            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />
+          <AssociationSet Name="FK__ChiTietDo__MaSan__5629CD9C" Association="Self.FK__ChiTietDo__MaSan__5629CD9C">
+            <End Role="SanPham" EntitySet="SanPhams" />
+            <End Role="ChiTietDonHang" EntitySet="ChiTietDonHangs" />
           </AssociationSet>
-          <AssociationSet Name="FK__SanPham__MaDanhM__403A8C7D" Association="Self.FK__SanPham__MaDanhM__403A8C7D">
-            <End Role="DanhMuc" EntitySet="DanhMuc" />
-            <End Role="SanPham" EntitySet="SanPham" />
+          <AssociationSet Name="FK__SanPham__MaDanhM__59063A47" Association="Self.FK__SanPham__MaDanhM__59063A47">
+            <End Role="DanhMuc" EntitySet="DanhMucs" />
+            <End Role="SanPham" EntitySet="SanPhams" />
           </AssociationSet>
-          <AssociationSet Name="FK__DonHang__MaNguoi__440B1D61" Association="Self.FK__DonHang__MaNguoi__440B1D61">
-            <End Role="NguoiDung" EntitySet="NguoiDung" />
-            <End Role="DonHang" EntitySet="DonHang" />
+          <AssociationSet Name="FK__DonHang__MaNguoi__571DF1D5" Association="Self.FK__DonHang__MaNguoi__571DF1D5">
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
+            <End Role="DonHang" EntitySet="DonHangs" />
           </AssociationSet>
-          <AssociationSet Name="FK__NguoiDung__MaTai__3B75D760" Association="Self.FK__NguoiDung__MaTai__3B75D760">
-            <End Role="TaiKhoan" EntitySet="TaiKhoan" />
-            <End Role="NguoiDung" EntitySet="NguoiDung" />
+          <AssociationSet Name="FK__NguoiDung__MaTai__5812160E" Association="Self.FK__NguoiDung__MaTai__5812160E">
+            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -331,9 +331,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QlyWebBanGiayModelStoreContainer" CdmEntityContainer="QlyWebBanGiayEntities">
-          <EntitySetMapping Name="ChiTietDonHang">
-            <EntityTypeMapping TypeName="QlyWebBanGiayModel.ChiTietDonHang">
+        <EntityContainerMapping StorageEntityContainer="QlyBanGiayModelStoreContainer" CdmEntityContainer="QlyBanGiayEntities">
+          <EntitySetMapping Name="ChiTietDonHangs">
+            <EntityTypeMapping TypeName="QlyBanGiayModel.ChiTietDonHang">
               <MappingFragment StoreEntitySet="ChiTietDonHang">
                 <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
                 <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
@@ -343,16 +343,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DanhMuc">
-            <EntityTypeMapping TypeName="QlyWebBanGiayModel.DanhMuc">
+          <EntitySetMapping Name="DanhMucs">
+            <EntityTypeMapping TypeName="QlyBanGiayModel.DanhMuc">
               <MappingFragment StoreEntitySet="DanhMuc">
                 <ScalarProperty Name="MaDanhMuc" ColumnName="MaDanhMuc" />
                 <ScalarProperty Name="TenDanhMuc" ColumnName="TenDanhMuc" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DonHang">
-            <EntityTypeMapping TypeName="QlyWebBanGiayModel.DonHang">
+          <EntitySetMapping Name="DonHangs">
+            <EntityTypeMapping TypeName="QlyBanGiayModel.DonHang">
               <MappingFragment StoreEntitySet="DonHang">
                 <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
                 <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
@@ -362,8 +362,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="NguoiDung">
-            <EntityTypeMapping TypeName="QlyWebBanGiayModel.NguoiDung">
+          <EntitySetMapping Name="NguoiDungs">
+            <EntityTypeMapping TypeName="QlyBanGiayModel.NguoiDung">
               <MappingFragment StoreEntitySet="NguoiDung">
                 <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
@@ -374,8 +374,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SanPham">
-            <EntityTypeMapping TypeName="QlyWebBanGiayModel.SanPham">
+          <EntitySetMapping Name="SanPhams">
+            <EntityTypeMapping TypeName="QlyBanGiayModel.SanPham">
               <MappingFragment StoreEntitySet="SanPham">
                 <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
                 <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
@@ -387,8 +387,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TaiKhoan">
-            <EntityTypeMapping TypeName="QlyWebBanGiayModel.TaiKhoan">
+          <EntitySetMapping Name="TaiKhoans">
+            <EntityTypeMapping TypeName="QlyBanGiayModel.TaiKhoan">
               <MappingFragment StoreEntitySet="TaiKhoan">
                 <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
                 <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
@@ -412,7 +412,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

@@ -12,12 +12,12 @@ namespace DAWeb.Areas.Admin.Controllers
 {
     public class DanhMucsController : Controller
     {
-        private QlyWebBanGiayEntities db = new QlyWebBanGiayEntities();
+        private QlyBanGiayEntities db = new QlyBanGiayEntities();
 
         // GET: Admin/DanhMucs
         public ActionResult Index()
         {
-            return View(db.DanhMuc.ToList());
+            return View(db.DanhMucs.ToList());
         }
 
         // GET: Admin/DanhMucs/Details/5
@@ -27,7 +27,7 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DanhMuc danhMuc = db.DanhMuc.Find(id);
+            DanhMuc danhMuc = db.DanhMucs.Find(id);
             if (danhMuc == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace DAWeb.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.DanhMuc.Add(danhMuc);
+                db.DanhMucs.Add(danhMuc);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DanhMuc danhMuc = db.DanhMuc.Find(id);
+            DanhMuc danhMuc = db.DanhMucs.Find(id);
             if (danhMuc == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace DAWeb.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DanhMuc danhMuc = db.DanhMuc.Find(id);
+            DanhMuc danhMuc = db.DanhMucs.Find(id);
             if (danhMuc == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace DAWeb.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            DanhMuc danhMuc = db.DanhMuc.Find(id);
-            db.DanhMuc.Remove(danhMuc);
+            DanhMuc danhMuc = db.DanhMucs.Find(id);
+            db.DanhMucs.Remove(danhMuc);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
