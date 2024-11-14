@@ -1,0 +1,22 @@
+﻿@model IEnumerable<DAWeb.Models.SanPham>
+
+@foreach (var product in Model)
+{
+    <div class="col-md-4 product-item">
+        <div class="product-card">
+            <img src="@Url.Content(product.AnhSanPham)" alt="@product.TenSanPham" class="product-image" />
+            <h4 class="product-name">@product.TenSanPham</h4>
+            <p class="product-price">@string.Format("{0:0,0} VND", product.Gia)</p>
+
+            <form action="@Url.Action("ChiTietSanPham", "Product", new { id = product.MaSanPham })" method="get">
+                <!-- Liên kết đến trang chi tiết sản phẩm -->
+                <input type="hidden" name="productId" value="@product.MaSanPham" />
+                <input type="hidden" name="quantity" value="1" />
+                <button type="submit" class="btn btn-default add-to-cart">
+                    <img style="width:30px; padding:2px; margin-top:3px;" src="~/images/icons/shopping-cart.png" /> Thêm vào giỏ
+                </button>
+            </form>
+        </div>
+    </div>
+}
+

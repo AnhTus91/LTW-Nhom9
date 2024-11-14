@@ -1,0 +1,95 @@
+﻿@model DAWeb.Models.NguoiDung
+
+
+@{
+    ViewBag.Title = "UserDetails";
+}
+<div class="user-details">
+    <h3>@Model.HoTen</h3>
+    <p><strong>Địa chỉ:</strong> @Model.DiaChi</p>
+    <p><strong>Số điện thoại:</strong> @Model.SoDienThoai</p>
+    <p>
+        <strong>Ảnh đại diện:</strong><br />
+        @if (!string.IsNullOrEmpty(Model.AnhDaiDien))
+        {
+            <img src="@Url.Content(Model.AnhDaiDien)" alt="Ảnh đại diện" style="width: 150px; height: 150px;" />
+
+
+        }
+        else
+        {
+            <span>Chưa có ảnh đại diện</span>
+        }
+    </p>
+
+    <p>@Html.ActionLink("Edit", "EditUserDetails")</p>
+    <p>@Html.ActionLink("Xem lịch sử đơn hàng", "OrderHistory", "User", new { id = Model.MaNguoiDung }, new { @class = "btn btn-primary" })</p>
+
+</div>
+<style>
+
+    /* CSS cho UserDetails */
+    .user-details {
+        width: 100%;
+        max-width: 500px; /* Giới hạn chiều rộng */
+        margin: 0 auto;
+        background-color: #ffffff; /* Nền trắng để dễ đọc */
+        border-radius: 15px; /* Bo tròn góc */
+        padding: 20px; /* Padding thoải mái */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+        font-family: 'Arial', sans-serif; /* Font chữ dễ đọc */
+        transition: transform 0.3s; /* Hiệu ứng chuyển động */
+    }
+
+        .user-details:hover {
+            transform: translateY(-5px); /* Nâng lên khi hover */
+        }
+
+        .user-details h3 {
+            font-size: 24px; /* Kích thước tiêu đề lớn hơn */
+            font-weight: bold;
+            color: #333; /* Màu chữ tối */
+            text-align: center;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #4CAF50; /* Đường viền dưới */
+            padding-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+        }
+
+        .user-details p {
+            font-size: 16px; /* Kích thước chữ chính */
+            color: #555; /* Màu chữ xám */
+            margin-bottom: 15px; /* Khoảng cách giữa các đoạn */
+            line-height: 1.5; /* Khoảng cách giữa các dòng */
+        }
+
+            
+
+        
+        .user-details span {
+            font-style: italic;
+            color: #999; /* Màu chữ nhạt */
+            display: block;
+            text-align: center;
+            margin-top: 10px; /* Khoảng cách trên */
+        }
+
+        .user-details a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px; /* Padding thoải mái cho nút */
+            background-color: #4CAF50; /* Màu nền xanh */
+            color: white; /* Màu chữ trắng */
+            text-align: center;
+            border-radius: 5px; /* Bo tròn góc nút */
+            text-decoration: none; /* Không gạch chân */
+            font-size: 16px; /* Kích thước chữ nút */
+            font-weight: bold; /* Chữ đậm */
+            transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển động */
+        }
+
+            .user-details a:hover {
+                background-color: #45a049; /* Màu nền khi hover */
+                transform: translateY(-2px); /* Nâng nút khi hover */
+            }
+
+</style>

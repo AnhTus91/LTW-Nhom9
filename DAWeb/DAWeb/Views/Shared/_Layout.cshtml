@@ -1,0 +1,389 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Web Bán Giày </title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/css/prettyPhoto.css" rel="stylesheet">
+    <link href="~/css/price-range.css" rel="stylesheet">
+    <link href="~/css/animate.css" rel="stylesheet">
+    <link href="~/css/main.css" rel="stylesheet">
+    <link href="~/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    
+</head><!--/head-->
+
+<body>
+    <header id="header">
+        <!--header-->
+        <div class="header_top">
+            <!--header_top-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="contactinfo">
+                            <ul class="nav nav-pills">
+                                <li><img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/phone.png" />0908855932</li>
+                                <li><img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/email.png" />giayvn@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="social-icons pull-right">
+                            <ul class="nav navbar-nav">
+                                <li><img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/facebook.png" /></li>
+                                <li><img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/instagram.png" /></li>
+                                <li><img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/visa.png" /></li>
+                                <li><img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/email.png" /></li>
+                                <li><img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/youtube.png" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header_top-->
+
+        <div class="header-middle">
+            <!--header-middle-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo pull-left">
+                            <a href="index.html"><img src="~/images/home/logo.png" alt="" /></a>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="shop-menu pull-right">
+                            <ul class="nav navbar-nav">
+                                @*<li><a href="#"><img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/checkout.png" /> Checkout</a></li>*@
+                                <li>
+                                    <a href="@Url.Action("Index", "Cart")">
+                                        <img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/shopping-cart.png" />
+                                        Cart
+                                        <span class="badge badge-light" style="position: relative; top: -10px;  background-color: white; color: red;">
+                                            @ViewBag.CartItemCount
+                                        </span>
+                                    </a>
+
+                                </li>
+
+                                @if (Session["userLogin"] == null)
+                                {
+                                    <li>
+                                        <img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/login.png" />
+                                        @Html.ActionLink("Login", "Login", "User")
+                                    </li>
+                                    <li>
+                                        <img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/user.png" />
+                                        Account
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a href="@Url.Action("UserDetails", "User")">
+                                            <img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/user.png" />
+                                            @Session["userLogin"]
+                                        </a>
+                                    </li>
+                                    <li>@Html.ActionLink("Đăng Xuất", "Logout", "User")</li>
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header-middle-->
+
+        <div class="header-bottom">
+            <!--header-bottom-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="mainmenu pull-left">
+                            <ul class="nav navbar-nav collapse navbar-collapse">
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                  <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 2 })">NIKE</a></li>
+                                <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 3 })">BALENCIAGA</a></li>
+                                <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 4 })">DIOR</a></li>
+                                <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 5 })">ADIDAS</a></li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="search_box pull-right">
+                            @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+                            {
+                                <input type="text" name="keyword" placeholder="Search" />
+                                <button type="submit" class="btn btn-default">Tìm kiếm</button>
+                            }
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div><!--/header-bottom-->
+    </header><!--/header-->
+
+
+
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                @RenderBody()
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <footer id="footer">
+        <!-- Footer -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="companyinfo">
+                            <p>Website bán giày thể thao và thời trang</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+                                    <div class="iframe-img">
+                                        <img src="~/images/icons/iframe1.png" alt="Video 1" />
+                                    </div>
+                                    <div class="overlay-icon">
+                                        <i class="fa fa-play-circle-o"></i>
+                                    </div>
+                                </a>
+                                <p>Giày thể thao mới</p>
+                                <h2>24 DEC 2024</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+                                    <div class="iframe-img">
+                                        <img src="~/images/icons/iframe1.png" alt="Video 2" />
+                                    </div>
+                                    <div class="overlay-icon">
+                                        <i class="fa fa-play-circle-o"></i>
+                                    </div>
+                                </a>
+                                <p>Giày thời trang</p>
+                                <h2>24 DEC 2024</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+                                    <div class="iframe-img">
+                                        <img src="~/images/icons/iframe1.png" alt="Video 3" />
+                                    </div>
+                                    <div class="overlay-icon">
+                                        <i class="fa fa-play-circle-o"></i>
+                                    </div>
+                                </a>
+                                <p>Giày thể thao nữ</p>
+                                <h2>24 DEC 2024</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="video-gallery text-center">
+                                <a href="#">
+                                    <div class="iframe-img">
+                                        <img src="~/images/icons/iframe2.png" alt="Video 4" />
+                                    </div>
+                                    <div class="overlay-icon">
+                                        <i class="fa fa-play-circle-o"></i>
+                                    </div>
+                                </a>
+                                <p>Giày công sở</p>
+                                <h2>24 DEC 2024</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="address">
+                            <img src="~/images/map.png" alt="Map" />
+                            <p>123 Đường Giày, Phường Thời Trang, Thành Phố Hồ Chí Minh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Dịch vụ</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Hỗ trợ trực tuyến</a></li>
+                                <li><a href="#">Liên hệ với chúng tôi</a></li>
+                                <li><a href="#">Tình trạng đơn hàng</a></li>
+                                <li><a href="#">Thay đổi địa chỉ</a></li>
+                                <li><a href="#">Câu hỏi thường gặp</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Cửa hàng nhanh</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Giày nam</a></li>
+                                <li><a href="#">Giày nữ</a></li>
+                                <li><a href="#">Giày thể thao</a></li>
+                                <li><a href="#">Giày công sở</a></li>
+                                <li><a href="#">Thẻ quà tặng</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Chính sách</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Điều khoản sử dụng</a></li>
+                                <li><a href="#">Chính sách bảo mật</a></li>
+                                <li><a href="#">Chính sách hoàn trả</a></li>
+                                <li><a href="#">Hệ thống thanh toán</a></li>
+                                <li><a href="#">Hệ thống vé</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Về cửa hàng</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Thông tin công ty</a></li>
+                                <li><a href="#">Cơ hội nghề nghiệp</a></li>
+                                <li><a href="#">Địa điểm cửa hàng</a></li>
+                                <li><a href="#">Chương trình liên kết</a></li>
+                                <li><a href="#">Bản quyền</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offs-1">
+                        <div class="single-widget">
+                            <h2>Đăng ký nhận tin</h2>
+                            <form action="#" class="searchform">
+                                <input type="text" placeholder="Địa chỉ email của bạn" />
+                                <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+                                <p>Nhận thông tin cập nhật mới nhất từ <br />trang web của chúng tôi...</p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        @*<div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <p class="pull-left">Bản quyền © 2024 Website bán giày. Tất cả quyền được bảo lưu.</p>
+                        <p class="pull-right">Thiết kế bởi <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+                    </div>
+                </div>
+            </div>*@
+
+    </footer>
+    <!--/Footer-->
+
+
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.scrollUp.min.js"></script>
+    <script src="~/js/price-range.js"></script>
+    <script src="~/js/jquery.prettyPhoto.js"></script>
+    <script src="~/js/main.js"></script>
+</body>
+</html>
+
+
+
+<style>
+    /* Container cho ô tìm kiếm */
+    .search_box {
+        position: relative;
+        width: 100%; /* Chiếm toàn bộ chiều rộng */
+        max-width: 400px; /* Đặt chiều rộng tối đa cho ô tìm kiếm */
+        margin: 0 auto; /* Căn giữa trong trang */
+    }
+
+        /* Ô nhập tìm kiếm */
+        .search_box input[type="text"] {
+            height:40px;
+            width: 250px; /* Chiếm toàn bộ chiều rộng của container */
+            padding: 12px 40px 12px 15px; /* Khoảng cách bên trong */
+            border: 2px solid #ddd; /* Đường viền mờ */
+            border-radius: 50px; /* Bo góc tròn */
+            font-size: 16px; /* Kích thước chữ */
+            transition: border-color 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển đổi cho đường viền và bóng */
+            outline: none; /* Ẩn viền mặc định của trình duyệt */
+        }
+
+            /* Hiệu ứng khi ô nhập được chọn */
+            .search_box input[type="text"]:focus {
+                border-color: #4CAF50; /* Đổi màu viền khi ô được chọn */
+                box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Tạo bóng mờ quanh ô nhập */
+            }
+
+        /* Nút tìm kiếm */
+        .search_box button {
+            position: absolute; /* Đặt nút trong vị trí tương đối */
+            left: 260px; /* Đưa nút về bên phải */
+            top: 50%; /* Đưa nút vào giữa ô nhập */
+            transform: translateY(-50%); /* Canh giữa theo chiều dọc */
+            padding: 10px 15px; /* Khoảng cách bên trong */
+            border: none; /* Không có đường viền */
+            background-color: #4CAF50; /* Màu nền cho nút */
+            color: white; /* Màu chữ */
+            border-radius: 50px; /* Bo góc tròn */
+            cursor: pointer; /* Hiển thị con trỏ khi hover */
+            font-size: 16px; /* Kích thước chữ */
+            transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển đổi cho màu nền và kích thước */
+        }
+
+            /* Hiệu ứng hover cho nút tìm kiếm */
+            .search_box button:hover {
+                background-color: #45a049; /* Đổi màu khi hover */
+                transform: scale(1.05); /* Tăng kích thước nhẹ khi hover */
+            }
+
+</style>

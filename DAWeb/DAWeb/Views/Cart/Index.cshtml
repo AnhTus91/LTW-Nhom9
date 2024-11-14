@@ -1,0 +1,140 @@
+﻿@model DAWeb.Models.GioHang
+
+
+
+<h2>Giỏ hàng của bạn</h2>
+
+@if (Model.Items.Count == 0)
+{
+    <p>Giỏ hàng của bạn đang trống.</p>
+}
+else
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td><img src="@Url.Content(@item.AnhSanPham)" style="width: 100px; height: 100px;" /></td>
+                    <td>@item.TenSanPham</td>
+                    <td>@item.Gia VND</td>
+                    <td>
+                        <form action="@Url.Action("UpdateQuantity", "Cart")" method="post">
+                            <input type="hidden" name="productId" value="@item.MaSanPham" />
+                            <input type="number" name="quantity" value="@item.SoLuong" min="1" style="width: 60px;" />
+                            <button type="submit" class="btn btn-success" style="margin-left: 10px;">Cập nhật</button>
+                        </form>
+                    </td>
+                    <td>@(item.Gia * item.SoLuong) VND</td>
+                    <td>
+                        <a href="@Url.Action("RemoveFromCart", new { productId = item.MaSanPham })" class="btn btn-danger">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+    <h3>Tổng cộng: @Model.GetTotalPrice() VND</h3>
+    <a href="@Url.Action("Checkout")" class="btn btn-primary">Thanh toán</a>
+    <hr class="card-1 " />
+
+    <style>
+        /* Styling for the table */
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Màu xanh dương cho nút thanh toán */
+            color: white;
+        }
+
+        .card-1 {
+            margin-top: 150px;
+        }
+
+        .table {
+            width: 100%;
+            margin: auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+            .table th, .table td {
+                padding: 12px 15px;
+                text-align: left;
+                border: 1px solid #ddd; /* Viền nhẹ */
+            }
+
+            .table th {
+                background-color: #343a40; /* Màu nền tối cho tiêu đề */
+                color: white;
+            }
+
+            .table tr:nth-child(even) {
+                background-color: #f2f2f2; /* Màu nền cho hàng chẵn */
+            }
+
+            .table tr:hover {
+                background-color: #e9ecef; /* Màu nền khi hover */
+            }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-success {
+            background-color: #28a745; /* Màu xanh cho nút cập nhật */
+            color: white;
+        }
+
+        .btn-danger {
+            background-color: #dc3545; /* Màu đỏ cho nút xóa */
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Màu xanh dương cho nút thanh toán */
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #218838; /* Màu xanh đậm khi hover */
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Màu đỏ đậm khi hover */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Màu xanh dương đậm khi hover */
+        }
+
+        h3 {
+            text-align: right;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 150px;
+        }
+    </style>

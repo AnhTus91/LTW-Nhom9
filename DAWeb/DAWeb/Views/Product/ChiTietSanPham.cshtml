@@ -1,0 +1,239 @@
+﻿@model DAWeb.Models.SanPham
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Đặt layout của trang chung
+}
+
+<div class=" product-detail">
+    <div class="row">
+        <!-- Phần hình ảnh sản phẩm -->
+        <div class="col-md-6">
+            @*<img src="~/images/@Model.AnhSanPham" alt="@Model.TenSanPham" class="img-fluid product-image" />*@
+            <img src="@Url.Content(@Model.AnhSanPham)" alt="@Model.TenSanPham" class="img-fluid product-image" />
+        </div>
+
+        <!-- Phần thông tin sản phẩm -->
+        <div class="col-md-6">
+            <h2 class="product-title">@Model.TenSanPham</h2>
+            <h4 class="product-price">Giá: @Model.Gia VND</h4>
+            <p class="product-description"><strong>Mô tả:</strong> @Model.MoTa</p>
+            <p class="product-stock"><strong>Số lượng còn:</strong> @Model.SoLuongTon</p>
+            <p class="product-category"><strong>Danh mục:</strong> @Model.DanhMuc.TenDanhMuc</p>
+
+            <!-- Nút thêm vào giỏ hàng -->
+            <form action="@Url.Action("AddToCart", "Cart")" method="get">
+                <div class="quantity-container">
+                    <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 80px; display: inline-block;" />
+                    <input type="hidden" name="productId" value="@Model.MaSanPham" />
+                </div>
+                <button type="submit" class="btn btn-success add-to-cart-button">
+                    <img style="width:20px;padding:2px;margin-right:5px;" src="~/images/icons/shopping-cart.png" /> Thêm vào giỏ hàng
+                </button>
+            </form>
+        </div>
+
+    </div>
+    <div class="reviews">
+        
+        <div class="rating">
+            <h3>Đánh Giá Sản Phẩm</h3>
+            <span class="star" onclick="setRating(1)">★</span>
+            <span class="star" onclick="setRating(2)">★</span>
+            <span class="star" onclick="setRating(3)">★</span>
+            <span class="star" onclick="setRating(4)">★</span>
+            <span class="star" onclick="setRating(5)">★</span>
+            <span id="rating-value"> (0)</span>
+        </div>
+        <textarea id="review-text" placeholder="Viết đánh giá của bạn..." rows="4" style="width: 500px; margin-top: 10px;"></textarea>
+        
+
+        <div class="existing-reviews" style="margin-top: 20px;">
+            <h4>Đánh Giá Từ Khách Hàng</h4>
+            <p><strong>Nguyễn Văn A:</strong> Sản phẩm rất đẹp và chất lượng tốt! <span>★★★★★</span></p>
+            <p><strong>Trần Thị B:</strong> Mình rất thích thiết kế này! <span>★★★★☆</span></p>
+            <button onclick="submitReview()">Gửi Đánh Giá</button>
+        </div>
+    </div>
+</div>
+<style>
+    /* CSS cho trang chi tiết sản phẩm */
+    .product-detail {
+        margin: 20px auto; /* Căn giữa trang với lề trên và dưới 20px */
+        padding: 50px; /* Khoảng cách bên trong 50px */
+        background-color: #fff; /* Màu nền trắng */
+        border-radius: 12px; /* Bo tròn các góc với bán kính 12px */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng cho phần tử */
+        max-width: 1200px; /* Chiều rộng tối đa là 1200px */
+    }
+
+    /* Hình ảnh sản phẩm */
+    .product-image {
+        width: 100%; /* Chiều rộng 100% của phần tử cha */
+        max-width: 400px; /* Chiều rộng tối đa là 400px */
+        height: auto; /* Chiều cao tự động */
+        border-radius: 12px; /* Bo tròn các góc của hình ảnh */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển tiếp cho thay đổi transform và box-shadow */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng cho hình ảnh */
+        margin-top: 30px; /* Khoảng cách trên 30px */
+    }
+
+        .product-image:hover {
+            transform: scale(1.05); /* Phóng to hình ảnh khi hover */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Tăng cường độ đổ bóng khi hover */
+        }
+
+    /* Tiêu đề sản phẩm */
+    .product-title {
+        font-size: 28px; /* Kích thước chữ 28px */
+        font-weight: 600; /* Đậm 600 */
+        color: #333; /* Màu chữ xám đậm */
+        margin-bottom: 20px; /* Khoảng cách dưới 20px */
+    }
+
+    /* Giá sản phẩm */
+    .product-price {
+        font-size: 24px; /* Kích thước chữ 24px */
+        font-weight: bold; /* Đậm */
+        color: #e74c3c; /* Màu chữ đỏ */
+        margin-bottom: 15px; /* Khoảng cách dưới 15px */
+    }
+
+    /* Thông tin mô tả sản phẩm */
+    .product-description,
+    .product-stock,
+    .product-category {
+        font-size: 16px; /* Kích thước chữ 16px */
+        color: #555; /* Màu chữ xám */
+        margin-bottom: 12px; /* Khoảng cách dưới 12px */
+        line-height: 1.6; /* Khoảng cách dòng 1.6 */
+    }
+
+    /* Khu vực điều chỉnh số lượng */
+    .quantity-container {
+        margin-top: 15px; /* Khoảng cách trên 15px */
+        display: flex; /* Sử dụng flexbox để căn giữa */
+        align-items: center; /* Căn giữa theo chiều dọc */
+    }
+
+        /* Input số lượng */
+        .quantity-container input[type="number"] {
+            width: 70px; /* Chiều rộng 70px */
+            padding: 6px; /* Padding 6px */
+            border: 1px solid #ddd; /* Đường viền màu xám nhạt */
+            border-radius: 6px; /* Bo tròn các góc với bán kính 6px */
+            text-align: center; /* Canh giữa chữ trong input */
+            margin-right: 15px; /* Khoảng cách bên phải 15px */
+        }
+
+    /* Nút thêm vào giỏ hàng */
+    .add-to-cart-button {
+        margin-top: 15px; /* Khoảng cách trên 15px */
+        padding: 12px 18px; /* Padding 12px trên/dưới, 18px trái/phải */
+        font-size: 16px; /* Kích thước chữ 16px */
+        background-color: #28a745; /* Màu nền xanh lá cây */
+        border: none; /* Không có đường viền */
+        border-radius: 6px; /* Bo tròn các góc với bán kính 6px */
+        color: white; /* Màu chữ trắng */
+        display: inline-flex; /* Hiển thị inline-flex */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Hiệu ứng chuyển tiếp cho màu nền và transform */
+    }
+
+        .add-to-cart-button img {
+            margin-right: 8px; /* Khoảng cách bên phải cho hình ảnh trong nút */
+        }
+
+        .add-to-cart-button:hover {
+            background-color: #218838; /* Thay đổi màu nền khi hover */
+            transform: translateY(-2px); /* Di chuyển nút lên 2px khi hover */
+        }
+
+        .add-to-cart-button:active {
+            transform: translateY(0); /* Khôi phục vị trí khi nhấn */
+        }
+
+    /* Phần đánh giá sản phẩm */
+    .reviews {
+        margin-top: 30px; /* Khoảng cách trên 30px */
+        padding-top: 100px; /* Padding trên 100px */
+        padding: 20px; /* Padding 20px cho tất cả các bên */
+        border-radius: 8px; /* Bo tròn các góc với bán kính 8px */
+        background-color: #f7f7f7; /* Màu nền xám nhạt */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ cho phần đánh giá */
+    }
+
+        .reviews h3 {
+            font-size: 22px; /* Kích thước chữ tiêu đề 22px */
+            font-weight: 600; /* Đậm 600 */
+            margin-bottom: 15px; /* Khoảng cách dưới 15px */
+            color: #333; /* Màu chữ xám đậm */
+        }
+
+    /* Đánh giá sao */
+    .rating {
+        display: flex; /* Sử dụng flexbox để căn sao theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        margin-bottom: 10px; /* Khoảng cách dưới 10px */
+        font-size: 18px; /* Kích thước chữ 18px */
+    }
+
+        .rating span {
+            margin-right: 5px; /* Khoảng cách bên phải giữa các ngôi sao */
+        }
+
+    .star {
+        cursor: pointer; /* Con trỏ sẽ thay đổi khi hover vào sao */
+        font-size: 24px; /* Kích thước của ngôi sao 24px */
+        color: #ddd; /* Màu sao chưa được chọn */
+        transition: color 0.3s ease; /* Hiệu ứng chuyển tiếp cho màu sắc */
+    }
+
+        .star:hover, .star:hover ~ .star {
+            color: #f39c12; /* Màu sao khi hover */
+        }
+
+        .star.selected {
+            color: #f39c12; /* Màu sao khi được chọn */
+        }
+
+    /* Ô đánh giá */
+    #review-text {
+        width: 100%; /* Chiều rộng 100% */
+        padding: 10px; /* Padding 10px */
+        border: 1px solid #ddd; /* Đường viền màu xám nhạt */
+        border-radius: 8px; /* Bo tròn các góc với bán kính 8px */
+        margin-top: 10px; /* Khoảng cách trên 10px */
+        font-size: 14px; /* Kích thước chữ 14px */
+    }
+
+    /* Nút gửi đánh giá */
+    button {
+        padding: 10px 20px; /* Padding 10px trên/dưới, 20px trái/phải */
+        background-color: #3498db; /* Màu nền xanh dương */
+        color: white; /* Màu chữ trắng */
+        border: none; /* Không có đường viền */
+        border-radius: 6px; /* Bo tròn các góc với bán kính 6px */
+        cursor: pointer; /* Con trỏ sẽ thay đổi khi hover vào nút */
+        transition: background-color 0.3s ease; /* Hiệu ứng chuyển tiếp cho màu nền */
+        margin-top: 10px; /* Khoảng cách trên 10px */
+    }
+
+        button:hover {
+            background-color: #2980b9; /* Thay đổi màu nền khi hover */
+        }
+
+    /* Các đánh giá hiện tại */
+    .existing-reviews {
+        margin-top: 20px; /* Khoảng cách trên 20px */
+    }
+
+        .existing-reviews p {
+            font-size: 16px; /* Kích thước chữ 16px */
+            color: #555; /* Màu chữ xám */
+            padding: 8px 0; /* Padding 8px trên/dưới */
+            border-bottom: 1px solid #eee; /* Đường viền dưới màu xám nhạt */
+        }
+
+
+</style>

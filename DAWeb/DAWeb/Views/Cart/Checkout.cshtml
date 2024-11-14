@@ -1,0 +1,128 @@
+﻿@model DAWeb.Models.GioHang
+
+@{
+    ViewBag.Title = "Thanh Toán";
+}
+
+<h2>Thanh Toán</h2>
+
+@if (Model.Items.Count == 0)
+{
+    <p>Giỏ hàng của bạn hiện đang rỗng. <a href="@Url.Action("Index", "Cart")">Quay về giỏ hàng</a>.</p>
+}
+else
+{
+    <form action="@Url.Action("Checkout", "Cart")" method="post">
+        <div>
+            <label for="customerName">Tên Khách Hàng:</label>
+            <input type="text" id="customerName" name="customerName" required />
+        </div>
+        <div>
+            <label for="customerAddress">Địa Chỉ:</label>
+            <input type="text" id="customerAddress" name="customerAddress" required />
+        </div>
+        <div>
+            <label for="customerPhone">Số Điện Thoại:</label>
+            <input type="text" id="customerPhone" name="customerPhone" required />
+        </div>
+
+        <h3>Thông Tin Giỏ Hàng</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tên Sản Phẩm</th>
+                    <th>Số Lượng</th>
+                    <th>Giá</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td>@item.TenSanPham</td>
+                        <td>@item.SoLuong</td>
+                        <td>@item.Gia.ToString("C")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <h4>Tổng Tiền: @Model.GetTotalPrice().ToString("C")</h4>
+
+        <button type="submit">Xác Nhận Thanh Toán</button>
+    </form>
+}
+
+<style>
+    /* Reset CSS */
+
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #4CAF50; /* Màu xanh lá cây */
+    }
+
+
+
+
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: border-color 0.3s;
+    }
+
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+        }
+
+    h3 {
+        margin-top: 20px;
+        color: #333;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #4CAF50; /* Màu xanh lá cây cho tiêu đề bảng */
+        color: white;
+    }
+
+    h4 {
+        text-align: right;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #4CAF50; /* Màu xanh lá cây */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        display: block;
+        margin: 0 auto; /* Center the button */
+        margin-bottom: 40px;
+    }
+
+        button:hover {
+            background-color: #45a049; /* Màu xanh lá cây đậm khi hover */
+        }
+</style>

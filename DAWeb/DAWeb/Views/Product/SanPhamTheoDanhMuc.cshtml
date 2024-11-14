@@ -1,0 +1,20 @@
+﻿@model IEnumerable<DAWeb.Models.SanPham>
+
+<h2>Sản Phẩm Theo Danh Mục</h2>
+
+<div>
+    @foreach (var product in Model)
+    {
+        <div>
+            <h3>@product.TenSanPham</h3>
+            <p>Giá: @product.Gia</p>
+            <p>Mô tả: @product.MoTa</p>
+            <img src="@product.AnhSanPham" alt="@product.TenSanPham" width="100" height="100" />
+        </div>
+        <hr />
+    }
+</div>
+<style>
+  
+
+</style>

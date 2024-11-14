@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Số sản phẩm: @ViewBag.demSanPham</h2>
+<h2>Số user: @ViewBag.demUser </h2>
+<h2>Số đơn hàng: @ViewBag.demDonHang</h2>
+
+@Scripts.Render("~/bundles/admin/jquery")
+<script>
+
+    $('.tq').addClass('active');
+</script>

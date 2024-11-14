@@ -1,0 +1,155 @@
+﻿@model List<DAWeb.Models.SanPham>
+
+
+
+
+<div class="category-tab">
+  
+
+
+    <div class="recommended-items">
+        <h2 class="title text-center">Sản phẩm phổng biến</h2>
+        <div class="row">
+            @foreach (var product in Model)
+            {
+                <div class="col-md-4 product-item">
+                    <div class="product-card">
+                        <img src="@Url.Content(product.AnhSanPham)" alt="@product.TenSanPham" class="product-image" />
+                        <h4 class="product-name">@product.TenSanPham</h4>
+                        <p class="product-price">@string.Format("{0:0,0} VND", product.Gia)</p>
+
+                        <form action="@Url.Action("ChiTietSanPham", "Product", new { id = product.MaSanPham })" method="get">
+                            <input type="hidden" name="productId" value="@product.MaSanPham" />
+                            <input type="hidden" name="quantity" value="1" />
+                            <button type="submit" class="btn btn-default add-to-cart">
+                                <img style="width:30px; padding:2px; margin-top:3px;" src="~/images/icons/shopping-cart.png" /> Thêm vào giỏ
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+</div><!--/category-tab-->
+@*<h2 class="title text-center">recommended items</h2>*@
+<div class="recommended_items">
+    <!--recommended_items-->
+    <!--recommended_items Nhẫn-->
+
+    <div class="recommended_items">
+        <h2 class="title text-center">NIKE</h2>
+
+
+        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    @Html.Action("RecommendedItems", "Product", new { categoryId = 2 })
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--recommended_items Vòng-->
+
+    <div class="recommended_items">
+        <h2 class="title text-center">BALENCIAGA</h2>
+
+
+        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    @Html.Action("RecommendedItems", "Product", new { categoryId = 3 })
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--recommended_items Bông Tai-->
+
+    <div class="recommended_items">
+        <h2 class="title text-center">DIOR</h2>
+
+
+        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    @Html.Action("RecommendedItems", "Product", new { categoryId = 4 })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="recommended_items">
+        <h2 class="title text-center">ADIDAS</h2>
+
+
+        <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    @Html.Action("RecommendedItems", "Product", new { categoryId = 5 })
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--/recommended_items-->
+
+<style>
+    .recommended-items {
+        margin-top: 20px;
+    }
+
+    .product-item {
+        margin-bottom: 20px;
+        transition: transform 0.2s; /* Thêm hiệu ứng khi hover */
+    }
+
+        .product-item:hover {
+            transform: scale(1.05); /* Phóng to khi hover */
+        }
+
+    .product-card {
+        border: 1px solid #ddd;
+        padding: 15px;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff; /* Thêm nền trắng cho thẻ sản phẩm */
+    }
+
+    .product-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #f0f0f0; /* Thêm viền cho hình ảnh */
+        padding: 5px; /* Thêm padding cho hình ảnh */
+    }
+
+    .product-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 10px 0; /* Thêm margin trên và dưới cho tên sản phẩm */
+        color: #333; /* Thay đổi màu chữ cho tên sản phẩm */
+    }
+
+    .product-price {
+        color: #d9534f;
+        font-size: 16px;
+        margin-bottom: 10px;
+        font-weight: bold; /* Đậm giá */
+    }
+
+    .add-to-cart {
+        background-color: #FE980F; /* Màu nền cho nút thêm vào giỏ */
+        color: #fff; /* Màu chữ trắng */
+        padding: 8px 15px; /* Padding cho nút */
+        border: none; /* Không có viền */
+        border-radius: 5px; /* Bo góc cho nút */
+        cursor: pointer; /* Đổi con trỏ khi hover */
+        display: inline-flex; /* Hiển thị dưới dạng flex */
+        align-items: center; /* Canh giữa hình ảnh và chữ */
+    }
+
+        .add-to-cart img {
+            margin-right: 5px; /* Thêm khoảng cách giữa hình ảnh và chữ */
+        }
+</style>

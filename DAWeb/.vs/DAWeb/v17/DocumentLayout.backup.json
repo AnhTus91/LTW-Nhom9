@@ -1,0 +1,513 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\LTWeb\\DAWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|d:\\ltweb\\daweb\\daweb\\areas\\admin\\views\\sanphams\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\areas\\admin\\views\\sanphams\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\areas\\admin\\controllers\\homeadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\areas\\admin\\controllers\\homeadmincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|d:\\ltweb\\daweb\\daweb\\areas\\admin\\views\\homeadmin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\areas\\admin\\views\\homeadmin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|d:\\ltweb\\daweb\\daweb\\areas\\admin\\views\\sanphams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\areas\\admin\\views\\sanphams\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|d:\\ltweb\\daweb\\daweb\\areas\\admin\\views\\sanphams\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\areas\\admin\\views\\sanphams\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|d:\\ltweb\\daweb\\daweb\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|d:\\ltweb\\daweb\\daweb\\views\\user\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\views\\user\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|d:\\ltweb\\daweb\\daweb\\views\\user\\orderhistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\views\\user\\orderhistory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|d:\\ltweb\\daweb\\daweb\\views\\product\\recommendeditems.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\views\\product\\recommendeditems.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|d:\\ltweb\\daweb\\daweb\\views\\product\\sanphamtheodanhmuc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\views\\product\\sanphamtheodanhmuc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|d:\\ltweb\\daweb\\daweb\\views\\product\\recommendeditemsbypopularity.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\views\\product\\recommendeditemsbypopularity.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|d:\\ltweb\\daweb\\daweb\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\areas\\admin\\controllers\\sanphamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\areas\\admin\\controllers\\sanphamscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\app_start\\filterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\models\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\models\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\areas\\admin\\controllers\\taikhoanscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\areas\\admin\\controllers\\taikhoanscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\areas\\admin\\views\\danhmucs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\areas\\admin\\views\\danhmucs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\models\\chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\models\\chitietdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|D:\\LTWeb\\DAWeb\\daweb\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7833BA6-9678-41C5-BAAE-A695755959D5}|DAWeb\\DAWeb.csproj|solutionrelative:daweb\\models\\donhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Views\\HomeAdmin\\Index.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Areas\\Admin\\Views\\HomeAdmin\\Index.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Views\\HomeAdmin\\Index.cshtml",
+              "RelativeToolTip": "DAWeb\\Areas\\Admin\\Views\\HomeAdmin\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T00:48:31.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Views\\SanPhams\\Details.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Areas\\Admin\\Views\\SanPhams\\Details.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Views\\SanPhams\\Details.cshtml",
+              "RelativeToolTip": "DAWeb\\Areas\\Admin\\Views\\SanPhams\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T00:44:54.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Views\\SanPhams\\Edit.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Areas\\Admin\\Views\\SanPhams\\Edit.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Views\\SanPhams\\Edit.cshtml",
+              "RelativeToolTip": "DAWeb\\Areas\\Admin\\Views\\SanPhams\\Edit.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T00:43:13.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Views\\SanPhams\\Index.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Areas\\Admin\\Views\\SanPhams\\Index.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Views\\SanPhams\\Index.cshtml",
+              "RelativeToolTip": "DAWeb\\Areas\\Admin\\Views\\SanPhams\\Index.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T00:43:11.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "DAWeb\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAC4AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T00:40:34.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderDetails.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\User\\OrderDetails.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Views\\User\\OrderDetails.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\User\\OrderDetails.cshtml",
+              "RelativeToolTip": "DAWeb\\Views\\User\\OrderDetails.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T00:36:19.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeAdminController.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
+              "RelativeDocumentMoniker": "DAWeb\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
+              "RelativeToolTip": "DAWeb\\Areas\\Admin\\Controllers\\HomeAdminController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T12:41:46.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderHistory.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\User\\OrderHistory.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Views\\User\\OrderHistory.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\User\\OrderHistory.cshtml",
+              "RelativeToolTip": "DAWeb\\Views\\User\\OrderHistory.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T00:36:15.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SanPhamTheoDanhMuc.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\Product\\SanPhamTheoDanhMuc.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Views\\Product\\SanPhamTheoDanhMuc.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\Product\\SanPhamTheoDanhMuc.cshtml",
+              "RelativeToolTip": "DAWeb\\Views\\Product\\SanPhamTheoDanhMuc.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T00:28:28.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RecommendedItems.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\Product\\RecommendedItems.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Views\\Product\\RecommendedItems.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\Product\\RecommendedItems.cshtml",
+              "RelativeToolTip": "DAWeb\\Views\\Product\\RecommendedItems.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T00:24:47.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "DAWeb\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "DAWeb\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T12:41:53.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "DAWeb\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Controllers\\UserController.cs",
+              "RelativeToolTip": "DAWeb\\Controllers\\UserController.cs",
+              "ViewState": "AgIAANYAAAAAAAAAAAAiwCEBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T16:14:04.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RecommendedItemsByPopularity.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\Product\\RecommendedItemsByPopularity.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Views\\Product\\RecommendedItemsByPopularity.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\Product\\RecommendedItemsByPopularity.cshtml",
+              "RelativeToolTip": "DAWeb\\Views\\Product\\RecommendedItemsByPopularity.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-13T00:24:52.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "DAWeb\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAAAFcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-06T00:43:39.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "DAWeb\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T12:29:41.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SanPhamsController.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Controllers\\SanPhamsController.cs",
+              "RelativeDocumentMoniker": "DAWeb\\Areas\\Admin\\Controllers\\SanPhamsController.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Controllers\\SanPhamsController.cs",
+              "RelativeToolTip": "DAWeb\\Areas\\Admin\\Controllers\\SanPhamsController.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAowBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T12:41:47.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "DAWeb\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "DAWeb\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T12:33:28.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "DAWeb\\Controllers\\CartController.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Controllers\\CartController.cs",
+              "RelativeToolTip": "DAWeb\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAAwJUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T00:45:11.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "DAWeb\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-06T00:43:35.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "DAWeb\\App_Start\\RouteConfig.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "DAWeb\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T12:36:44.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BundleConfig.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\App_Start\\BundleConfig.cs",
+              "RelativeDocumentMoniker": "DAWeb\\App_Start\\BundleConfig.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\App_Start\\BundleConfig.cs",
+              "RelativeToolTip": "DAWeb\\App_Start\\BundleConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T12:38:14.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "FilterConfig.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\App_Start\\FilterConfig.cs",
+              "RelativeDocumentMoniker": "DAWeb\\App_Start\\FilterConfig.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\App_Start\\FilterConfig.cs",
+              "RelativeToolTip": "DAWeb\\App_Start\\FilterConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T12:38:12.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ShoppingCart.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Models\\ShoppingCart.cs",
+              "RelativeDocumentMoniker": "DAWeb\\Models\\ShoppingCart.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Models\\ShoppingCart.cs",
+              "RelativeToolTip": "DAWeb\\Models\\ShoppingCart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T16:37:47.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "TaiKhoansController.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Controllers\\TaiKhoansController.cs",
+              "RelativeDocumentMoniker": "DAWeb\\Areas\\Admin\\Controllers\\TaiKhoansController.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Controllers\\TaiKhoansController.cs",
+              "RelativeToolTip": "DAWeb\\Areas\\Admin\\Controllers\\TaiKhoansController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T16:13:53.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Views\\DanhMucs\\Index.cshtml",
+              "RelativeDocumentMoniker": "DAWeb\\Areas\\Admin\\Views\\DanhMucs\\Index.cshtml",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Areas\\Admin\\Views\\DanhMucs\\Index.cshtml",
+              "RelativeToolTip": "DAWeb\\Areas\\Admin\\Views\\DanhMucs\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-09T05:55:25.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "TaiKhoan.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Models\\TaiKhoan.cs",
+              "RelativeDocumentMoniker": "DAWeb\\Models\\TaiKhoan.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Models\\TaiKhoan.cs",
+              "RelativeToolTip": "DAWeb\\Models\\TaiKhoan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T16:37:40.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ChiTietDonHang.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Models\\ChiTietDonHang.cs",
+              "RelativeDocumentMoniker": "DAWeb\\Models\\ChiTietDonHang.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Models\\ChiTietDonHang.cs",
+              "RelativeToolTip": "DAWeb\\Models\\ChiTietDonHang.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T00:46:04.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "DonHang.cs",
+              "DocumentMoniker": "D:\\LTWeb\\DAWeb\\DAWeb\\Models\\DonHang.cs",
+              "RelativeDocumentMoniker": "DAWeb\\Models\\DonHang.cs",
+              "ToolTip": "D:\\LTWeb\\DAWeb\\DAWeb\\Models\\DonHang.cs",
+              "RelativeToolTip": "DAWeb\\Models\\DonHang.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAqwBgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T00:45:50.032Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
