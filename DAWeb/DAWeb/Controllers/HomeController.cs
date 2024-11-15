@@ -41,7 +41,15 @@ namespace DAWeb.Controllers
 
         //    return View(sanPham); //
         //}
+
+
+
+        //Các chức năng dưới footer
         public ActionResult AboutUs()
+        {
+            return View();
+        }
+        public ActionResult WebCopyright()
         {
             return View();
         }

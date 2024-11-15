@@ -13,7 +13,7 @@
             {
                 <li>
                     <div class="product-item">
-                        <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.MaSanPham })">
+                        <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.MaSanPham })"></a>
                             <div class="product-top">
                                 <img src="@Url.Content(product.AnhSanPham)" alt="@product.TenSanPham" class="product-thumb" />
                                 <form class="buy-now" action="@Url.Action("ChiTietSanPham", "Product", new { id = product.MaSanPham })" method="get">
@@ -26,8 +26,6 @@
                                 <a href="" class="product-name">@product.TenSanPham</a>
                                 <div class="product-price">@string.Format("{0:0,0} VND", product.Gia)</div>
                             </div>
-                        </a>
-
                     </div>
                 </li>
             }

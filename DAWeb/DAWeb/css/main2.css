@@ -107,6 +107,11 @@ a#scrollUp {
             background: none;
             transform: translateY(4px); /* Dịch chuyển 10px sang phải khi hover */
         }
+@media (max-width: 1280px){
+    .mainmenu ul li:not(:first-child) {
+        display: none; /* Hide all items except the first one */
+    }
+}
 /* Container cho ô tìm kiếm */
 .search_box {
     position: relative;
@@ -196,7 +201,7 @@ a#scrollUp {
 
 /*  Dropdown menu*/
 
-.navbar-header
+.navbar-header{}
 .navbar-toggle .icon-bar {
     background-color: #fff;
 }
@@ -2606,3 +2611,183 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
     }
 }
 
+
+
+
+/*Các trang dưới footer (đang test)
+*/#PageInfo {
+    /*padding: 100px 20px 0px 100px;
+    display: flex;
+    flex-wrap: wrap;*/
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: auto; /* Chiếm toàn bộ chiều cao màn hình */
+    padding: 0 20px 0px 20px; /* Tạo khoảng cách xung quanh */
+}
+
+    #PageInfo h2 {
+        padding: 130px 150px 0px 150px;
+        margin: 0px;
+        font-weight: bolder;
+    }
+
+    #PageInfo p {
+        padding: 0px 150px;
+        font-size: 25px;
+        line-height: 1.8;
+    }
+
+        #PageInfo p i {
+            font-weight: bold;
+        }
+
+@media (max-width:1080px) {
+    #PageInfo {
+        padding: 100px 20px 20px 0px;
+    }
+
+        #PageInfo h2 {
+            padding: 40px 50px 0px 50px;
+        }
+
+        #PageInfo p {
+            padding: 0px 50px;
+            line-height: 1.9;
+        }
+
+    #ProLmao {
+        padding: 100px 20px 20px 0px;
+    }
+
+        #ProLmao h2 {
+            padding: 0px 50px;
+            line-height: 1.9;
+        }
+}
+
+@media (max-width:640px) {
+    #PageInfo h2 {
+        padding: 40px 20px 0px 20px;
+    }
+
+    #PageInfo p {
+        padding: 0px 20px;
+    }
+}
+
+#ProLmao {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 20px 0px 20px; /* Tạo khoảng cách xung quanh */
+}
+
+    #ProLmao h2 {
+        padding: 130px 50vw 0px 50vw;
+        margin: 0px;
+        font-weight: bolder;
+    }
+
+
+
+
+
+
+
+
+/*menu sidebar (đang test)*/
+/*sidebar menu*/
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /*Cho qua trái để ẩn khỏi màn hình, khi kích hoạt thì sẽ đi từ trái sang*/
+    width: 250px;
+    height: 500%;
+    background-color: #f3f2ec;
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 10px;
+    font-size: 20px;
+    border-radius: 0 4px 0 4px;
+}
+
+    .sidebar h2 {
+        list-style-type: none;
+        padding: 20px;
+        text-align: center;
+        color: #252a2b;
+        border-bottom: 1px solid #E0E0DA;
+    }
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+            text-align: left;
+        }
+
+            .sidebar ul li a {
+                color: #252a2b;
+                text-decoration: none;
+                display: block;
+                padding: 10px;
+            }
+
+                .sidebar ul li a:hover {
+                    background-color: #c0bfba;
+                    border-radius: 12px;
+                }
+
+    /* Kích hoạt sidebar */
+    .sidebar.active {
+        left: 0;
+    }
+
+/* Đè lên khi sidebar được mở */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+
+    /*Hiệu ứng xóa phông, để cho đẹp chứ không ổn cho hiệu năng cho lắm...*/
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /*Đảm bảo hỗ trợ cho các trình duyệt Webkit*/
+}
+    /*Đè lên khi sidebar được kích hoạt*/
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+/*Nút menu sidebar*/
+.navbar-toggle {
+    background: none;
+    border: none;
+    padding: 0px;
+    font-size: 16px;
+    top:-10px;
+    left:20px;
+    cursor: pointer;
+    display:none;
+}
+
+    .navbar-toggle .icon-bar {
+        width: 22px;
+        height: 4px;
+        background-color: #fff;
+        margin: 6px 0;
+        display: block;
+        border-radius:12px;
+    }
+@media (max-width: 1280px) {
+    .navbar-toggle{
+        display:block;
+    }
+}

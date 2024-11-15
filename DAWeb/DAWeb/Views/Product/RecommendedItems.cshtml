@@ -24,11 +24,11 @@
 
     <div class="recommended-items">
         <ul class="products">
-            @foreach (var items in Model)
+            @foreach (var sanPham1 in Model)
             {
                 <li>
                     <div class="product-item">
-                        <a href="@Url.Action("ChiTietSanPham", "Product", new { id = sanPham.MaSanPham })">
+                        <a href="@Url.Action("ChiTietSanPham", "Product", new { id = sanPham.MaSanPham })"></a>
                             <div class="product-top">
                                 <img src="@Url.Content(sanPham.AnhSanPham)" alt="@sanPham.TenSanPham" class="product-thumb" />
                                 <form class="buy-now" action="@Url.Action("ChiTietSanPham", "Product", new { id = sanPham.MaSanPham })" method="get">
@@ -41,15 +41,13 @@
                                 <a href="" class="product-name">@sanPham.TenSanPham</a>
                                 <div class="product-price">@string.Format("{0:0,0} VND", sanPham.Gia)</div>
                             </div>
-                        </a>
-
                     </div>
                 </li>
             }
         </ul>
     </div>
 }
-<style>
+@*<style>
     .product-image-wrapper {
         border: 1px solid #e0e0e0;
         border-radius: 8px;
@@ -93,4 +91,4 @@
             color: #333;
             margin: 10px 0 15px;
         }
-</style>
+</style>*@

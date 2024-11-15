@@ -35,14 +35,53 @@
         <div class="header-top">
             <!--header_top-->
             <div class="col-sm-8">
+
+                @*<div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">toggle navigation</span>
+                    <ul style="list-style:none;">
+                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 2 })">giày nam</a></li>
+                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 3 })">giày nữ</a></li>
+                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 4 })">phụ kiện</a></li>
+                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 5 })">balo-túi</a></li>
+                    </ul>
+                </button>
+            </div>*@
+
+
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <button type="button" class="navbar-toggle">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                 </div>
+
+                <!--Sidebar-->
+                <div id="sidebar" class="sidebar">
+                    <h2>MENU</h2>
+                    <ul>
+                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 2 })">GIÀY NIKE</a></li>
+                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 3 })">GIÀY BALENCIAGA</a></li>
+                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 4 })">GIÀY DIOR</a></li>
+                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 5 })">GIÀY ADIDAS</a></li>
+                    </ul>
+                </div>
+
+                <!--Đè lên nền background để làm mờ phần nền sau -->
+                <div class="sidebar-overlay"></div>
+
+
+
+
+
+
+
+
+
+
+                <!--Các danh mục sản phẩm trên header-->
                 <div class="mainmenu pull-left">
                     <ul class="nav navbar-nav collapse navbar-collapse">
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -56,16 +95,15 @@
             </div>
 
             <div class="search_box pull-right">
-                @using (Html.BeginForm("Search", "Home", FormMethod.Get))
-                {
-                    <input type="text" name="keyword" placeholder="Search" />
-                    <button class="search_box button"><i class="fa fa-search"></i></button>
-                }
-            </div>
+            @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+            {
+                <input type="text" name="keyword" placeholder="Search" />
+                <button class="search_box button"><i class="fa fa-search"></i></button>
+            }
+        </div>
 
-
-
-            <div class="col-sm-2">
+          
+            <div class="col-sm-3">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
                         @*<li><a href="#"><img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/checkout.png" /> Checkout</a></li>*@
@@ -91,12 +129,6 @@
                                 @*<img style="width:30px;padding:2px;margin-top:3px; position:absolute;" src="~/images/icons/login.png" />*@
                                 @*@Html.ActionLink("Login", "Login", "User")*@
                             </li>
-
-                            @* //Không bấm được, bỏ
-                                <li>
-                                    <img style="width: 30px; padding: 2px; margin-top: 3px; position: absolute;" src="~/images/icons/user.png" />
-                                    Account
-                                </li> *@
                         }
                         else
                         {
@@ -108,7 +140,7 @@
                             </li>
 
                             //Dùng để Logout, đã ném qua hàm UserDetails
-                            @* <li style="top:-10px;">@Html.ActionLink("Đăng Xuất", "Logout", "User")</li> *@
+                            //<li style="top:-10px;">@Html.ActionLink("Đăng Xuất", "Logout", "User")</li>
                         }
                     </ul>
                 </div>
@@ -126,9 +158,6 @@
                         </div>
 
                     </div>
-
-
-
                 </div>
             </div>
         </div><!--/header-middle-->
@@ -144,31 +173,18 @@
         <div class="footer-widget">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-2">
+                    <div class="col-sm-3">
                         <div class="single-widget">
-                            <h2>Dịch vụ</h2>
+                            <h2>Liên hệ</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Hỗ trợ trực tuyến</a></li>
-                                <li><a href="#">Liên hệ với chúng tôi</a></li>
-                                <li><a href="#">Tình trạng đơn hàng</a></li>
-                                <li><a href="#">Thay đổi địa chỉ</a></li>
+                                <li><a href="#">Địa chỉ: Huflit</a></li>
+                                <li><a href="#">Số điện thoại: 123</a></li>
+                                <li><a href="#">Email: ...</a></li>
                                 <li><a href="#">Câu hỏi thường gặp</a></li>
                             </ul>
                         </div>
                     </div>
-                    @*<div class="col-sm-2">
-                        <div class="single-widget">
-                            <h2>Cửa hàng nhanh</h2>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Giày nam</a></li>
-                                <li><a href="#">Giày nữ</a></li>
-                                <li><a href="#">Giày thể thao</a></li>
-                                <li><a href="#">Giày công sở</a></li>
-                                <li><a href="#">Thẻ quà tặng</a></li>
-                            </ul>
-                        </div>
-                    </div>*@
-                    <div class="col-sm-2">
+                    <div class="col-sm-3">
                         <div class="single-widget">
                             <h2>Chính sách</h2>
                             <ul class="nav nav-pills nav-stacked">
@@ -176,19 +192,17 @@
                                 <li><a href="#">Chính sách bảo mật</a></li>
                                 <li><a href="#">Chính sách hoàn trả</a></li>
                                 <li><a href="#">Hệ thống thanh toán</a></li>
-                                <li><a href="#">Hệ thống vé</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-3">
                         <div class="single-widget">
                             <h2>Về cửa hàng</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="~/Home/AboutUs">Thông tin công ty</a></li>
+                                <li><a href="~/Home/AboutUs">Thông tin về chúng tôi</a></li>
                                 <li><a href="#">Cơ hội nghề nghiệp</a></li>
-                                <li><a href="#">Địa điểm cửa hàng</a></li>
                                 <li><a href="#">Chương trình liên kết</a></li>
-                                <li><a href="#">Bản quyền</a></li>
+                                <li><a href="~/Home/WebCopyright">Bản quyền</a></li>
                             </ul>
                         </div>
                     </div>
@@ -217,58 +231,7 @@
     <script src="~/js/jquery.prettyPhoto.js"></script>
     <script src="~/js/main.js"></script>
     <script src="~/Scripts/maxLengthText.js"></script>
+    <script src="~/Scripts/menuButton.js"></script>
+    <script src="~/Scripts/SideBar.js"></script>
 </body>
 </html>
-
-
-
-<style>
-    /* Container cho ô tìm kiếm */
-    /*.search_box {
-        position: relative;
-        width: 100%;*/ /* Chiếm toàn bộ chiều rộng */
-    /*max-width: 400px;*/ /* Đặt chiều rộng tối đa cho ô tìm kiếm */
-    /*margin: 0 auto;*/ /* Căn giữa trong trang */
-    /*}*/
-
-    /* Ô nhập tìm kiếm */
-    /*.search_box input[type="text"] {
-            height:40px;
-            width: 250px;*/ /* Chiếm toàn bộ chiều rộng của container */
-    /*padding: 12px 40px 12px 15px;*/ /* Khoảng cách bên trong */
-    /*border: 2px solid #ddd;*/ /* Đường viền mờ */
-    /*border-radius: 50px;*/ /* Bo góc tròn */
-    /*font-size: 16px;*/ /* Kích thước chữ */
-    /*transition: border-color 0.3s, box-shadow 0.3s;*/ /* Hiệu ứng chuyển đổi cho đường viền và bóng */
-    /*outline: none;*/ /* Ẩn viền mặc định của trình duyệt */
-    /*}*/
-
-    /* Hiệu ứng khi ô nhập được chọn */
-    /*.search_box input[type="text"]:focus {
-                border-color: #4CAF50;*/ /* Đổi màu viền khi ô được chọn */
-    /*box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);*/ /* Tạo bóng mờ quanh ô nhập */
-    /*}*/
-
-    /* Nút tìm kiếm */
-    /*.search_box button {
-            position: absolute;*/ /* Đặt nút trong vị trí tương đối */
-    /*left: 260px;*/ /* Đưa nút về bên phải */
-    /*top: 50%;*/ /* Đưa nút vào giữa ô nhập */
-    /*transform: translateY(-50%);*/ /* Canh giữa theo chiều dọc */
-    /*padding: 10px 15px;*/ /* Khoảng cách bên trong */
-    /*border: none;*/ /* Không có đường viền */
-    /*background-color: #4CAF50;*/ /* Màu nền cho nút */
-    /*color: white;*/ /* Màu chữ */
-    /*border-radius: 50px;*/ /* Bo góc tròn */
-    /*cursor: pointer;*/ /* Hiển thị con trỏ khi hover */
-    /*font-size: 16px;*/ /* Kích thước chữ */
-    /*transition: background-color 0.3s, transform 0.3s;*/ /* Hiệu ứng chuyển đổi cho màu nền và kích thước */
-    /*}*/
-
-    /* Hiệu ứng hover cho nút tìm kiếm */
-    /*.search_box button:hover {
-                background-color: #45a049;*/ /* Đổi màu khi hover */
-    /*transform: scale(1.05);*/ /* Tăng kích thước nhẹ khi hover */
-    /*}*/
-
-</style>
