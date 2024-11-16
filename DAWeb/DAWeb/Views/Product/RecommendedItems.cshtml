@@ -1,94 +1,27 @@
 ﻿@model IEnumerable<DAWeb.Models.SanPham>
-@foreach (var sanPham in Model)
-{
-    @*<div class="col-sm-4">
-        <div class="product-image-wrapper">
-            <div class="single-products">
-                <div class="productinfo text-center">
 
-                    <img src="@url.content(@sanpham.anhsanpham)" alt="@sanpham.tensanpham" style="width: 250px; height: 250px;" />
-                    <h2>@sanpham.gia</h2>
-                    <p>@sanpham.tensanpham</p>
-                    <form action="@url.action("chitietsanpham", "product", new { id = sanpham.masanpham })" method="get">
-     liên kết đến trang chi tiết sản phẩm 
-    <input type="hidden" name="productid" value="@sanpham.masanpham" />
-                        <input type="hidden" name="quantity" value="1" />
-                        <button type="submit" class="btn btn-default add-to-cart">
-                            <img style="width:30px; padding:2px; margin-top:3px;" src="~/images/icons/shopping-cart.png" /> thêm vào giỏ
-                        </button>
-                    </form>
+<div class="recommended-items">
+    <ul class="products">
+        @foreach (var sanPham in Model)
+        {
+            <li>
+                <div class="product-item">
+                    <a href="@Url.Action("ChiTietSanPham", "Product", new { id = sanPham.MaSanPham })">
+                        <div class="product-top">
+                            <img src="@Url.Content(sanPham.AnhSanPham)" alt="@sanPham.TenSanPham" class="product-thumb" />
+                            <form class="buy-now" action="@Url.Action("ChiTietSanPham", "Product", new { id = sanPham.MaSanPham })" method="get">
+                                <input type="hidden" name="productId" value="@sanPham.MaSanPham" />
+                                <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="btn btn-default add-to-cart">Mua ngay</button>
+                            </form>
+                        </div>
+                        <div class="product-info">
+                            <a href="" class="product-name">@sanPham.TenSanPham</a>
+                            <div class="product-price">@string.Format("{0:0,0} VND", sanPham.Gia)</div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-        </div>
-    </div>*@
-
-    <div class="recommended-items">
-        <ul class="products">
-            @foreach (var sanPham1 in Model)
-            {
-                <li>
-                    <div class="product-item">
-                        <a href="@Url.Action("ChiTietSanPham", "Product", new { id = sanPham.MaSanPham })"></a>
-                            <div class="product-top">
-                                <img src="@Url.Content(sanPham.AnhSanPham)" alt="@sanPham.TenSanPham" class="product-thumb" />
-                                <form class="buy-now" action="@Url.Action("ChiTietSanPham", "Product", new { id = sanPham.MaSanPham })" method="get">
-                                    <input type="hidden" name="productId" value="@sanPham.MaSanPham" />
-                                    <input type="hidden" name="quantity" value="1" />
-                                    <button type="submit" class="btn btn-default add-to-cart">Mua ngay</button>
-                                </form>
-                            </div>
-                            <div class="product-info">
-                                <a href="" class="product-name">@sanPham.TenSanPham</a>
-                                <div class="product-price">@string.Format("{0:0,0} VND", sanPham.Gia)</div>
-                            </div>
-                    </div>
-                </li>
-            }
-        </ul>
-    </div>
-}
-@*<style>
-    .product-image-wrapper {
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 15px;
-        margin-bottom: 20px;
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        background-color: #ffffff;
-    }
-
-        .product-image-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+            </li>
         }
-
-    .single-products .productinfo {
-        text-align: center;
-    }
-
-        .single-products .productinfo img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            transition: opacity 0.3s ease;
-        }
-
-            .single-products .productinfo img:hover {
-                opacity: 0.9;
-            }
-
-        .single-products .productinfo h2 {
-            font-size: 18px;
-            font-weight: bold;
-            color: #d9534f;
-            margin: 10px 0;
-        }
-
-        .single-products .productinfo p {
-            font-size: 16px;
-            color: #333;
-            margin: 10px 0 15px;
-        }
-</style>*@
+    </ul>
+</div>

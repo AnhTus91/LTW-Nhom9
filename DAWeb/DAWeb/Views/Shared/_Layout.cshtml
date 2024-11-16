@@ -35,20 +35,6 @@
         <div class="header-top">
             <!--header_top-->
             <div class="col-sm-8">
-
-                @*<div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">toggle navigation</span>
-                    <ul style="list-style:none;">
-                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 2 })">giày nam</a></li>
-                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 3 })">giày nữ</a></li>
-                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 4 })">phụ kiện</a></li>
-                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 5 })">balo-túi</a></li>
-                    </ul>
-                </button>
-            </div>*@
-
-
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle">
                         <span class="sr-only">Toggle navigation</span>
@@ -74,17 +60,10 @@
 
 
 
-
-
-
-
-
-
-
                 <!--Các danh mục sản phẩm trên header-->
                 <div class="mainmenu pull-left">
                     <ul class="nav navbar-nav collapse navbar-collapse">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("SHOP", "Index", "Home")</li>
                         <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 2 })">NIKE</a></li>
                         <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 3 })">BALENCIAGA</a></li>
                         <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 4 })">DIOR</a></li>
@@ -95,14 +74,14 @@
             </div>
 
             <div class="search_box pull-right">
-            @using (Html.BeginForm("Search", "Home", FormMethod.Get))
-            {
-                <input type="text" name="keyword" placeholder="Search" />
-                <button class="search_box button"><i class="fa fa-search"></i></button>
-            }
-        </div>
+                @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+                {
+                    <input type="text" name="keyword" placeholder="Search" />
+                    <button class="search_box button"><i class="fa fa-search"></i></button>
+                }
+            </div>
 
-          
+
             <div class="col-sm-3">
                 <div class="shop-menu pull-right">
                     <ul class="nav navbar-nav">
@@ -121,7 +100,7 @@
                         @if (Session["userLogin"] == null)
                         {
                             <li>
-                                <a href="@Url.Action("Login", "User")" style="display: block; width: 100%; height: 100%;">
+                                <a href="@Url.Action("Login", "User")" @*style="display: block; width: 100%; height: 100%;"*@>
                                     <img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/login.png" />
                                     Đăng nhập
                                 </a>
@@ -206,19 +185,17 @@
                             </ul>
                         </div>
                     </div>
+
+                    <!--Nhúng bản đồ Google Map-->
+                    <div class="col-sm-3">
+                        <div class="map-container">
+                            <iframe class="responsive-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.290040323685!2d106.59805157427269!3d10.865530357545413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b088de30f3b%3A0xd2140740d360f705!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBOZ2_huqFpIG5n4buvIC0gVGluIGjhu41jIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCAoSFVGTElUKSBDxqEgc-G7nyBIw7NjIE3DtG4!5e0!3m2!1svi!2s!4v1731721444604!5m2!1svi!2s" width="300" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-
-        @*<div class="footer-bottom">
-                <div class="container">
-                    <div class="row">
-                        <p class="pull-left">Bản quyền © 2024 Website bán giày. Tất cả quyền được bảo lưu.</p>
-                        <p class="pull-right">Thiết kế bởi <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
-                    </div>
-                </div>
-            </div>*@
-
     </footer>
     <!--/Footer-->
 
