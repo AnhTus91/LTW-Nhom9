@@ -12,9 +12,17 @@
     <link href="~/css/price-range.css" rel="stylesheet">
     <link href="~/css/animate.css" rel="stylesheet">
     @*<link href="~/css/main.css" rel="stylesheet">*@
-    <link href="~/css/main2.css" rel="stylesheet">
+    @*<link href="~/css/responsive.css" rel="stylesheet">*@
 
-    <link href="~/css/responsive.css" rel="stylesheet">
+
+
+    <!--TEST CSS-->
+    <link href="~/css/main2.css" rel="stylesheet">
+    <link href="~/css/SilderBanner.css" rel="stylesheet" />
+    <link href="~/css/responsive2.css" rel="stylesheet" />
+
+
+
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -34,7 +42,6 @@
         <!--header-->
         <div class="header-top">
             <!--header_top-->
-            <div class="col-sm-8">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle">
                         <span class="sr-only">Toggle navigation</span>
@@ -71,25 +78,24 @@
 
                     </ul>
                 </div>
-            </div>
+    
 
-            <div class="search_box pull-right">
-                @using (Html.BeginForm("Search", "Home", FormMethod.Get))
-                {
-                    <input type="text" name="keyword" placeholder="Search" />
-                    <button class="search_box button"><i class="fa fa-search"></i></button>
-                }
-            </div>
+                <div class="search_box pull-right">
+                    @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+                    {
+                        <input type="text" name="keyword" placeholder="Tìm kiếm" />
+                        <button class="search_box button"><i class="fa fa-search"></i></button>
+                    }
+                </div>
 
+           
 
-            <div class="col-sm-3">
-                <div class="shop-menu pull-right">
-                    <ul class="nav navbar-nav">
-                        @*<li><a href="#"><img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/checkout.png" /> Checkout</a></li>*@
+                <div class="shop-menu">
+                    <ul class="navbar">
                         <li>
                             <a href="@Url.Action("Index", "Cart")">
                                 <img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/shopping-cart.png" />
-                                Giỏ hàng
+                                <p>Giỏ hàng</p>
                                 <span class="badge badge-light" style="position: relative; top: -10px;  background-color: white; color: red;">
                                     @ViewBag.CartItemCount
                                 </span>
@@ -102,11 +108,8 @@
                             <li>
                                 <a href="@Url.Action("Login", "User")" @*style="display: block; width: 100%; height: 100%;"*@>
                                     <img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/login.png" />
-                                    Đăng nhập
+                                    <p>Đăng nhập</p>
                                 </a>
-                                @*Đã chỉnh nút login trên thanh header-top khi người dùng đang ở trang đăng nhập*@
-                                @*<img style="width:30px;padding:2px;margin-top:3px; position:absolute;" src="~/images/icons/login.png" />*@
-                                @*@Html.ActionLink("Login", "Login", "User")*@
                             </li>
                         }
                         else
@@ -123,29 +126,20 @@
                         }
                     </ul>
                 </div>
-            </div>
+
 
         </div>
 
-        <div class="header-middle">
-            <!--header-middle-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="logo pull-left">
-                            <a href="index.html"><img src="~/images/home/logo.png" alt="" /></a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div><!--/header-middle-->
     </header><!--/header-->
+
+
+ 
+
+
+
     <section>
         <div class="container">
-            <div class="row">
-                @RenderBody()
-            </div>
+            @RenderBody()
         </div>
     </section>
     <footer>
@@ -154,12 +148,12 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <div class="single-widget">
-                            <h2>Liên hệ</h2>
+                            <h2>Về cửa hàng</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Địa chỉ: Huflit</a></li>
-                                <li><a href="#">Số điện thoại: 123</a></li>
-                                <li><a href="#">Email: ...</a></li>
-                                <li><a href="#">Câu hỏi thường gặp</a></li>
+                                <li><a href="~/Home/AboutUs">Thông tin về chúng tôi</a></li>
+                                <li><a href="#">Cơ hội nghề nghiệp</a></li>
+                                <li><a href="#">Chương trình liên kết</a></li>
+                                <li><a href="~/Home/WebCopyright">Bản quyền</a></li>
                             </ul>
                         </div>
                     </div>
@@ -176,16 +170,15 @@
                     </div>
                     <div class="col-sm-3">
                         <div class="single-widget">
-                            <h2>Về cửa hàng</h2>
+                            <h2>Liên hệ</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="~/Home/AboutUs">Thông tin về chúng tôi</a></li>
-                                <li><a href="#">Cơ hội nghề nghiệp</a></li>
-                                <li><a href="#">Chương trình liên kết</a></li>
-                                <li><a href="~/Home/WebCopyright">Bản quyền</a></li>
+                                <li><a href="#">Địa chỉ: Huflit Hóc Môn</a></li>
+                                <li><a href="#">Số điện thoại: 123</a></li>
+                                <li><a href="#">Email: ...</a></li>
+                                <li><a href="#">Câu hỏi thường gặp</a></li>
                             </ul>
                         </div>
                     </div>
-
                     <!--Nhúng bản đồ Google Map-->
                     <div class="col-sm-3">
                         <div class="map-container">
@@ -210,5 +203,7 @@
     <script src="~/Scripts/maxLengthText.js"></script>
     <script src="~/Scripts/menuButton.js"></script>
     <script src="~/Scripts/SideBar.js"></script>
+    <script src="~/Scripts/SlidesBanner.js"></script>
+    <script src="~/Scripts/TEST.js"></script>
 </body>
 </html>

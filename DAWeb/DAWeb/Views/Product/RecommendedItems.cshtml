@@ -1,27 +1,29 @@
 ﻿@model IEnumerable<DAWeb.Models.SanPham>
-
-<div class="recommended-items">
-    <ul class="products">
-        @foreach (var sanPham in Model)
-        {
-            <li>
-                <div class="product-item">
-                    <a href="@Url.Action("ChiTietSanPham", "Product", new { id = sanPham.MaSanPham })">
-                        <div class="product-top">
-                            <img src="@Url.Content(sanPham.AnhSanPham)" alt="@sanPham.TenSanPham" class="product-thumb" />
-                            <form class="buy-now" action="@Url.Action("ChiTietSanPham", "Product", new { id = sanPham.MaSanPham })" method="get">
-                                <input type="hidden" name="productId" value="@sanPham.MaSanPham" />
-                                <input type="hidden" name="quantity" value="1" />
-                                <button type="submit" class="btn btn-default add-to-cart">Mua ngay</button>
-                            </form>
-                        </div>
-                        <div class="product-info">
-                            <a href="" class="product-name">@sanPham.TenSanPham</a>
-                            <div class="product-price">@string.Format("{0:0,0} VND", sanPham.Gia)</div>
-                        </div>
-                    </a>
-                </div>
-            </li>
-        }
-    </ul>
+<div class="category-tab">
+    <div class="recommended-items">
+        <ul class="products">
+            @foreach (var product in Model)
+            {
+                <li>
+                    <div class="product-item">
+                        <a href="@Url.Action("ChiTietSanPham", "Product", new { id = product.MaSanPham })">
+                            <div class="product-top">
+                                <img src="@Url.Content(product.AnhSanPham)" alt="@product.TenSanPham" class="product-thumb" />
+                                <form class="buy-now" action="@Url.Action("ChiTietSanPham", "Product", new { id = product.MaSanPham })" method="get">
+                                    <input type="hidden" name="productId" value="@product.MaSanPham" />
+                                    <input type="hidden" name="quantity" value="1" />
+                                    <button type="submit" class="btn btn-default add-to-cart">Mua ngay</button>
+                                </form>
+                            </div>
+                            <div class="product-info">
+                                <a href="" class="product-name">@product.TenSanPham</a>
+                                <div class="product-price">@string.Format("{0:0,0} VND", product.Gia)</div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
 </div>
+

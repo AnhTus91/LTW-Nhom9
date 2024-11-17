@@ -21,17 +21,11 @@
             <span>Chưa có ảnh đại diện</span>
         }
     </p>
-
-    @*<p>@Html.ActionLink("Xem lịch sử đơn hàng", "OrderHistory", "User", new { id = Model.MaNguoiDung }, new { @class = "btn btn-primary" })</p>
-        <p>@Html.ActionLink("Edit", "EditUserDetails")</p>
-        <p style="top:-10px;">@Html.ActionLink("Đăng Xuất", "Logout", "User")</p>*@
-    @*<li style="top:-10px;">@Html.ActionLink("Đăng Xuất", "Logout", "User")</li>*@
     <div class="button-container">
-        <a href="@Url.Action("OrderHistory", "User", new { id = Model.MaNguoiDung })">Xem lịch sử đơn hàng</a>
-        <a href="@Url.Action("EditUserDetails")">Sửa thông tin</a>
-        <div class="logout-button">
-            <a href="@Url.Action("Logout", "User")">Đăng Xuất</a>
-        </div>
+        <a href="@Url.Action("OrderHistory", "User", new { id = Model.MaNguoiDung })" class="btn btn-warning">Xem lịch sử đơn hàng</a>
+        <a href="@Url.Action("EditUserDetails")" class="btn btn-warning">Sửa thông tin</a>
+        <div class="logout-button">            <a href="@Url.Action("Logout", "User")" class="btn btn-danger">Đăng Xuất</a></div>
+
     </div>
 </div>
 <style>
@@ -76,7 +70,7 @@
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px; /* Padding thoải mái cho nút */
-            background-color: #98a38c; /*Màu nền xanh */
+            background-color: #b08856; /*Màu nền xanh */
             color: #fff; /* Màu chữ trắng */
             text-align: center;
             border-radius: 8px; /* Bo tròn góc nút */
@@ -84,25 +78,5 @@
             font-size: 20px; /* Kích thước chữ nút */
             font-weight: bold; /* Chữ đậm */
             border-style: none;
-        }
-
-            .user-details a:hover {
-                background-color: #ffa80f; /*Màu nền xanh */
-                color: #111;
-            }
-
-    .button-container {
-        position: relative; /* Để đặt nút "Đăng Xuất" ở vị trí tuyệt đối */
-    }
-
-    .logout-button {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-    }
-
-        .logout-button a:hover {
-            background-color: #ff3c37; /*Màu nền xanh */
-            color: #111;
         }
 </style>

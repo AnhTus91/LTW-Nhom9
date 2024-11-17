@@ -39,8 +39,8 @@
 <style>
     /* CSS cho trang chi tiết sản phẩm */
     .product-detail {
-        margin: 20px auto; /* Căn giữa trang với lề trên và dưới 20px */
-        padding: 50px; /* Khoảng cách bên trong 50px */
+        margin: 50px auto; /* Căn giữa trang với lề trên và dưới 20px */
+        padding: 60px; /* Khoảng cách bên trong 50px */
         background-color: #fff; /* Màu nền trắng */
         border-radius: 12px; /* Bo tròn các góc với bán kính 12px */
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng cho phần tử */
@@ -55,7 +55,7 @@
         border-radius: 12px; /* Bo tròn các góc của hình ảnh */
         transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển tiếp cho thay đổi transform và box-shadow */
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng cho hình ảnh */
-        margin-top: 30px; /* Khoảng cách trên 30px */
+        margin-top: 20px; /* Khoảng cách trên 30px */
     }
 
         .product-image:hover {
@@ -111,7 +111,7 @@
         margin-top: 15px; /* Khoảng cách trên 15px */
         padding: 12px 18px; /* Padding 12px trên/dưới, 18px trái/phải */
         font-size: 16px; /* Kích thước chữ 16px */
-        background-color: #98a38c; /* Màu nền xanh lá cây */
+        background-color: #b08856; /* Màu nền xanh lá cây */
         border: none; /* Không có đường viền */
         border-radius: 6px; /* Bo tròn các góc với bán kính 6px */
         color: white; /* Màu chữ trắng */
@@ -126,94 +126,11 @@
 
         .add-to-cart-button:hover {
             background-color: #218838; /* Thay đổi màu nền khi hover */
-            transform: translateY(-2px); /* Di chuyển nút lên 2px khi hover */
         }
 
         .add-to-cart-button:active {
             transform: translateY(0); /* Khôi phục vị trí khi nhấn */
         }
 
-    /* Phần đánh giá sản phẩm */
-    .reviews {
-        margin-top: 30px; /* Khoảng cách trên 30px */
-        padding-top: 100px; /* Padding trên 100px */
-        padding: 20px; /* Padding 20px cho tất cả các bên */
-        border-radius: 8px; /* Bo tròn các góc với bán kính 8px */
-        background-color: #f7f7f7; /* Màu nền xám nhạt */
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ cho phần đánh giá */
-    }
-
-        .reviews h3 {
-            font-size: 22px; /* Kích thước chữ tiêu đề 22px */
-            font-weight: 600; /* Đậm 600 */
-            margin-bottom: 15px; /* Khoảng cách dưới 15px */
-            color: #333; /* Màu chữ xám đậm */
-        }
-
-    /* Đánh giá sao */
-    .rating {
-        display: flex; /* Sử dụng flexbox để căn sao theo chiều ngang */
-        align-items: center; /* Căn giữa theo chiều dọc */
-        margin-bottom: 10px; /* Khoảng cách dưới 10px */
-        font-size: 18px; /* Kích thước chữ 18px */
-    }
-
-        .rating span {
-            margin-right: 5px; /* Khoảng cách bên phải giữa các ngôi sao */
-        }
-
-    .star {
-        cursor: pointer; /* Con trỏ sẽ thay đổi khi hover vào sao */
-        font-size: 24px; /* Kích thước của ngôi sao 24px */
-        color: #ddd; /* Màu sao chưa được chọn */
-        transition: color 0.3s ease; /* Hiệu ứng chuyển tiếp cho màu sắc */
-    }
-
-        .star:hover, .star:hover ~ .star {
-            color: #f39c12; /* Màu sao khi hover */
-        }
-
-        .star.selected {
-            color: #f39c12; /* Màu sao khi được chọn */
-        }
-
-    /* Ô đánh giá */
-    #review-text {
-        width: 100%; /* Chiều rộng 100% */
-        padding: 10px; /* Padding 10px */
-        border: 1px solid #ddd; /* Đường viền màu xám nhạt */
-        border-radius: 8px; /* Bo tròn các góc với bán kính 8px */
-        margin-top: 10px; /* Khoảng cách trên 10px */
-        font-size: 14px; /* Kích thước chữ 14px */
-    }
-
-    /* Nút gửi đánh giá */
-    button {
-        padding: 10px 20px; /* Padding 10px trên/dưới, 20px trái/phải */
-        background-color: #3498db; /* Màu nền xanh dương */
-        color: white; /* Màu chữ trắng */
-        border: none; /* Không có đường viền */
-        border-radius: 6px; /* Bo tròn các góc với bán kính 6px */
-        cursor: pointer; /* Con trỏ sẽ thay đổi khi hover vào nút */
-        transition: background-color 0.3s ease; /* Hiệu ứng chuyển tiếp cho màu nền */
-        margin-top: 10px; /* Khoảng cách trên 10px */
-    }
-
-        button:hover {
-            background-color: #2980b9; /* Thay đổi màu nền khi hover */
-        }
-
-    /* Các đánh giá hiện tại */
-    .existing-reviews {
-        margin-top: 20px; /* Khoảng cách trên 20px */
-    }
-
-        .existing-reviews p {
-            font-size: 16px; /* Kích thước chữ 16px */
-            color: #555; /* Màu chữ xám */
-            padding: 8px 0; /* Padding 8px trên/dưới */
-            border-bottom: 1px solid #eee; /* Đường viền dưới màu xám nhạt */
-        }
-
-
+   
 </style>
