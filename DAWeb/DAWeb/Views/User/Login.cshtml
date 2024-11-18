@@ -101,45 +101,36 @@
         .form-control {
             padding: 10px;
             font-size: 16px;
-            border-radius: 5px;
+            border-radius: 8px;
             border: 1px solid #ccc;
         }
 
             .form-control:focus {
-                border-color: #007bff;
-                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-                outline: none;
+                border-color: #b08856;
+                outline: none; /* Xóa đường viền mặc định */
+                box-shadow:none;
             }
 
         /* Button styles */
         .btn-success {
-            background-color: #b08856;
+           /* background-color: #b08856;*/
             border: none;
             padding: 10px 20px;
             font-size: 16px;
-            border-radius: 5px;
+            border-radius: 8px;
             width: 100%;
             transition: background-color 0.3s ease;
         }
-
-            .btn-success:hover {
-                background-color: #218838;
-            }
-
         /* Button for registration */
         .btn-info {
-            background-color: #b08856;
+            /*background-color: #b08856;*/
             border: none;
             padding: 10px 20px;
             font-size: 16px;
-            border-radius: 5px;
+            border-radius: 8px;
             width: 100%;
             transition: background-color 0.3s ease;
         }
-
-            .btn-info:hover {
-                background-color: #138496;
-            }
 
         /* Error message badge */
         .badge-danger {
@@ -159,10 +150,11 @@
             border-radius: 5px;
             margin-bottom: 15px;
             color:black;
+            font-size:18px;
         }
 
         /* Forgot password link */
-        p a {
+        p a{
             color: #007bff;
             text-decoration: none;
         }
@@ -181,6 +173,6 @@
             font-size: 16px;
             color: #333;
             display: block;
-            margin-bottom: 10px;
+            margin: 10px 0 10px 0;
         }
     </style>

@@ -84,10 +84,6 @@ D:\LTWeb\DAWeb\DAWeb\obj\Debug\DAWeb.csproj.CoreCompileInputs.cache
 D:\LTWeb\DAWeb\DAWeb\obj\Debug\DAWeb.csproj.Up2Date
 D:\LTWeb\DAWeb\DAWeb\obj\Debug\DAWeb.dll
 D:\LTWeb\DAWeb\DAWeb\obj\Debug\DAWeb.pdb
-D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\obj\Debug\DAWeb.csproj.AssemblyReference.cache
-D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\obj\Debug\DAWeb.csproj.CoreCompileInputs.cache
-D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\obj\Debug\DAWeb.dll
-D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\obj\Debug\DAWeb.pdb
 D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\bin\DAWeb.dll.config
 D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\bin\DAWeb.dll
 D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\bin\DAWeb.pdb
@@ -169,4 +165,8 @@ D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\bin
 D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\bin\Newtonsoft.Json.xml
 D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\bin\Antlr3.Runtime.pdb
 D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\obj\Debug\DAWeb.csproj.AssemblyReference.cache
+D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\obj\Debug\DAWeb.csproj.CoreCompileInputs.cache
 D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\obj\Debug\DAWeb.csproj.CopyComplete
+D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\obj\Debug\DAWeb.dll
+D:\Công nghệ thông tin\Năm hai\HTML - CSS - JS\Lí thuyết\DAWeb\DAWeb\obj\Debug\DAWeb.pdb

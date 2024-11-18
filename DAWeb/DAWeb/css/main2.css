@@ -144,6 +144,10 @@ a#scrollUp {
         padding: 5px;
         cursor: pointer;
     }
+.search_box input[type="text"]:focus {
+    border-color: #b08856;
+    outline: none; /* Xóa đường viền mặc định */
+}
 @media (max-width: 768px) {
     .search_box {
         max-width: 250px; /* Chiều rộng nhỏ hơn để vừa với không gian */
@@ -210,7 +214,6 @@ a#scrollUp {
             width: 24px; /* Giảm kích thước của icon */
         }
 }
-
 
 
 /*************************
@@ -921,7 +924,7 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
     }
 
     #PageInfo p {
-        padding: 0px 100px;
+        padding: 0 100px 50px 100px;
         font-size: 25px;
         line-height: 1.8;
     }

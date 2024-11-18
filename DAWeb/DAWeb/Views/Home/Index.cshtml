@@ -21,7 +21,7 @@
                             </div>
                             <div class="product-info">
                                 <a href="" class="product-name">@product.TenSanPham</a>
-                                <div class="product-price">@string.Format("{0:0,0} VND", product.Gia)</div>
+                                <div class="product-price">@product.Gia.ToString("N0") <span class='vnd-symbol'>đ</span></div>
                             </div>
                         </a>
                     </div>
@@ -86,3 +86,9 @@
         </div>
     </div>
 </div><!--/recommended_items-->
+<style>
+    .vnd-symbol {
+        font-size: 1.1em; /* Tăng kích thước chữ */
+        text-decoration: underline;
+    }
+</style>

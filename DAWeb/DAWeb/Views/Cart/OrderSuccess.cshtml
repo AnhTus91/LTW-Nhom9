@@ -2,6 +2,16 @@
     ViewBag.Title = "Đơn Hàng Thành Công";
 }
 
-<h2>Đơn Hàng Thành Công!</h2>
-<p>Cảm ơn bạn đã đặt hàng. Đơn hàng của bạn đã được xác nhận.</p>
-<p><a href="@Url.Action("Index", "Home")">Quay về trang chủ</a></p>
+@*<h2>Đơn Hàng Thành Công!</h2>
+<p>Cảm ơn bạn đã đặt hàng. Đơn hàng của bạn đã được xác nhận.</p>*@
+
+<div class="PageInfo">
+    <h2>Đơn Hàng Thành Công!</h2>
+    <p><a href="@Url.Action("Index", "Home")">Quay về trang chủ</a></p>
+</div>
+
+<style>
+    .PageInfo {
+        padding:100px;
+    }
+</style>

@@ -2160,7 +2160,6 @@ textarea.input-lg {
 .btn-primary {
     color: #fff;
     background-color: #b08856;
-    border-color: #357ebd
 }
 
     .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
@@ -2186,7 +2185,6 @@ textarea.input-lg {
 .btn-warning {
     color: #fff;
     background-color: #b08856;
-    border-color: #eea236
 }
 
     .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open .dropdown-toggle.btn-warning {
@@ -2212,7 +2210,6 @@ textarea.input-lg {
 .btn-danger {
     color: #fff;
     background-color: #b08856;
-    border-color: #d43f3a
 }
 
     .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger {
@@ -2238,7 +2235,6 @@ textarea.input-lg {
 .btn-success {
     color: #fff;
     background-color: #b08856;
-    border-color: #4cae4c
 }
 
     .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
@@ -2264,7 +2260,6 @@ textarea.input-lg {
 .btn-info {
     color: #fff;
     background-color: #b08856;
-    border-color: #46b8da
 }
 
     .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {

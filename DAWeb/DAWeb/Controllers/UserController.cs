@@ -264,7 +264,7 @@ namespace DAWeb.Controllers
         }
         public ActionResult OrderDetails(int id)
         {
-            var donHang = db.DonHangs.Include("ChiTietDonHang.SanPham").FirstOrDefault(d => d.MaDonHang == id);
+            var donHang = db.DonHangs.Include("ChiTietDonHangs.SanPham").FirstOrDefault(d => d.MaDonHang == id);
 
 
             if (donHang == null)

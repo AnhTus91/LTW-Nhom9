@@ -3,17 +3,17 @@
 @*<h2>Sản Phẩm Theo Danh Mục</h2>*@
 
 @*<div>
-    @foreach (var product in Model)
-    {
-        <div>
-            <h3>@product.TenSanPham</h3>
-            <p>Giá: @product.Gia</p>
-            <p>Mô tả: @product.MoTa</p>
-            <img src="@product.AnhSanPham" alt="@product.TenSanPham" width="100" height="100" />
-        </div>
-        <hr />
-    }
-</div>*@
+        @foreach (var product in Model)
+        {
+            <div>
+                <h3>@product.TenSanPham</h3>
+                <p>Giá: @product.Gia</p>
+                <p>Mô tả: @product.MoTa</p>
+                <img src="@product.AnhSanPham" alt="@product.TenSanPham" width="100" height="100" />
+            </div>
+            <hr />
+        }
+    </div>*@
 <div class="recommended-items">
     <h2 class="title text-center">Danh mục sản phẩm: @ViewBag.CategoryName</h2>
     <ul class="products">
@@ -32,11 +32,19 @@
                         </div>
                         <div class="product-info">
                             <a href="" class="product-name">@product.TenSanPham</a>
-                            <div class="product-price">@string.Format("{0:0,0} VND", product.Gia)</div>
+                            <div class="product-price">@product.Gia.ToString("N0") <span class='vnd-symbol'>đ</span></div>
                         </div>
                     </a>
                 </div>
             </li>
         }
     </ul>
+
 </div>
+<style>
+
+    .vnd-symbol {
+        font-size: 1.1em; /* Tăng kích thước chữ */
+        text-decoration: underline;
+    }
+</style>

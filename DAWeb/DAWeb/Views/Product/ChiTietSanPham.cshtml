@@ -16,7 +16,7 @@
         <!-- Phần thông tin sản phẩm -->
         <div class="col-md-6">
             <h2 class="product-title">@Model.TenSanPham</h2>
-            <h4 class="product-price">Giá: @Model.Gia VND</h4>
+            <h4 class="product-price">Giá: @Model.Gia.ToString("N0") <span class='vnd-symbol'>đ</span></h4>
             <p class="product-description"><strong>Mô tả:</strong> @Model.MoTa</p>
             <p class="product-stock"><strong>Số lượng còn:</strong> @Model.SoLuongTon</p>
             <p class="product-category"><strong>Danh mục:</strong> @Model.DanhMuc.TenDanhMuc</p>
@@ -78,6 +78,10 @@
         color: #e74c3c; /* Màu chữ đỏ */
         margin-bottom: 15px; /* Khoảng cách dưới 15px */
     }
+    .vnd-symbol {
+        font-size: 1.1em; /* Tăng kích thước chữ */
+        text-decoration: underline;
+    }
 
     /* Thông tin mô tả sản phẩm */
     .product-description,
@@ -113,7 +117,7 @@
         font-size: 16px; /* Kích thước chữ 16px */
         background-color: #b08856; /* Màu nền xanh lá cây */
         border: none; /* Không có đường viền */
-        border-radius: 6px; /* Bo tròn các góc với bán kính 6px */
+        border-radius: 8px; /* Bo tròn các góc với bán kính 6px */
         color: white; /* Màu chữ trắng */
         display: inline-flex; /* Hiển thị inline-flex */
         align-items: center; /* Căn giữa theo chiều dọc */

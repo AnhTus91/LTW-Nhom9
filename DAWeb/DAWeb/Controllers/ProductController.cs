@@ -35,8 +35,7 @@ namespace DAWeb.Controllers
                 {
                     return HttpNotFound(); // Nếu không tìm thấy sản phẩm, trả về 404
                 }
-
-                return View(sanPham); //
+            return View(sanPham); //
             }
             public ActionResult SanPhamTheoDanhMuc(int categoryId)
             {
