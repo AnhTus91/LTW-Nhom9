@@ -114,17 +114,24 @@ a#scrollUp {
                     border-radius: 14px;
                 }
 
+
+/*************************
+*******Search Sidebar Moblie CSS******
+**************************/
+
+/*Ô tìm kiếm bên ngoài sidebar tìm kiếm*/
 .search_box {
     display: flex;
     align-items: center;
     position: relative;
 }
-
+    
+    /*Ô nhập chữ vào*/
     .search_box input[type="text"] {
         height: 50px;
         width: 250px;
         padding: 8px 15px;
-        border: 2px solid #ddd;
+        border: 1px solid #b08856;
         border-radius: 16px;
         font-size: 20px;
         outline: none;
@@ -132,6 +139,7 @@ a#scrollUp {
         transition: border-color 0.3s, box-shadow 0.3s;
     }
 
+    /*Nút tìm kiếm*/
     .search_box button {
         position: absolute;
         right: 0;
@@ -144,25 +152,212 @@ a#scrollUp {
         padding: 5px;
         cursor: pointer;
     }
-.search_box input[type="text"]:focus {
-    border-color: #b08856;
-    outline: none; /* Xóa đường viền mặc định */
+
+    .search_box input[type="text"]:focus {
+        border-color: #b08856;
+        outline: none; /* Xóa đường viền mặc định */
+        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
+    }
+@media (max-width: 767px) {
+  
 }
-@media (max-width: 768px) {
-    .search_box {
-        max-width: 250px; /* Chiều rộng nhỏ hơn để vừa với không gian */
+
+
+
+
+
+/* Sidebar tìm kiếm */
+.search-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Ẩn khỏi màn hình ban đầu */
+    width: 300px;
+    height: 100%;
+    background-color: #f3f2ec;
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px;
+    border-left: 1px solid #b08856;
+    border-radius: 4px 0 0 4px;
+}
+
+    .search-sidebar h2 {
+        text-align: center;
+        color: #252a2b;
+        border-bottom: 1px solid #b08856;
+        padding: 20px;
+        margin:20px 0 10px 0;
     }
 
-        .search_box input[type="text"] {
-            width: 180px; /* Đặt chiều rộng nhỏ hơn cho ô tìm kiếm */
-            padding: 10px 30px 10px 10px; /* Điều chỉnh padding để cân đối */
+    .search-sidebar input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #b08856;
+        outline:none;
+        border-radius: 12px;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+        .search-sidebar input[type="text"]:focus {
+            border-color: #b08856;
+            outline: none; /* Xóa đường viền mặc định */
+            box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
         }
 
-        .search_box button {
-            left: 150px; 
-        }
+    .search-sidebar button {
+        background-color: #b08856;
+        color: white;
+        padding: 15px 10px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        display: block;
+        width: 100%;
+    }
+.search-button {
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 2px;
+    font-size: 20px;
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms;
+}
+    .search-button:hover {
+        background-color: #f3f2ec;
+        border-radius:12px;
+    }
+.search-sidebar-button:hover {
+    background-color: none;
+}
+/* Kích hoạt sidebar */
+.search-sidebar.active {
+    padding: 10px 5px 0 5px;
+    right: 0;
 }
 
+/* Overlay lên nền sau*/
+
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+
+
+/*************************
+*******Menu Sidebar Moblie CSS******
+**************************/
+
+/*menu sidebar (đang test)*/
+/*sidebar menu*/
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /*Cho qua trái để ẩn khỏi màn hình, khi kích hoạt thì sẽ đi từ trái sang*/
+    width: 250px;
+    height: 500%;
+    background-color: #f3f2ec;
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 10px;
+    font-size: 20px;
+    border-radius: 0 4px 0 4px;
+    border-right: 1px solid #b08856;
+}
+
+    .sidebar h2 {
+        list-style-type: none;
+        padding: 20px;
+        text-align: center;
+        color: #252a2b;
+    }
+
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+        .sidebar ul li:first-child {
+            border-top: 1px solid #b08856;
+        }
+
+        .sidebar ul li {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #b08856;
+        }
+
+            .sidebar ul li a {
+                color: #696763;
+                text-decoration: none;
+                display: block;
+                padding: 10px;
+                font-size: 22px;
+            }
+
+                .sidebar ul li a:hover {
+                    background-color: #c0bfba;
+                    border-radius: 12px;
+                }
+    /* Kích hoạt sidebar */
+    .sidebar.active {
+        left: 0;
+        width: 300px;
+    }
+
+/* Overlay lên nền sau*/
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+    /*Hiệu ứng xóa phông, để cho đẹp chứ không ổn cho hiệu năng cho lắm...*/
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /*Đảm bảo hỗ trợ cho các trình duyệt Webkit*/
+}
+    
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+/*Nút menu sidebar*/
+.navbar-toggle {
+    background: none;
+    padding: 10px 7px;
+    margin: 0;
+    font-size: 16px;
+    top: -0px;
+    cursor: pointer;
+    display: none;
+    border-radius: 4px;
+    transition: border-radius 0.25s ease-in-out; /* Thời gian chuyển đổi và hiệu ứng chuyển động */
+}
+
+    .navbar-toggle:hover {
+        background-color: #f3f2ec;
+        border-radius: 10px;
+    }
+
+    .navbar-toggle .icon-bar {
+        width: 22px;
+        height: 4px;
+        background-color: #111;
+        margin: 0;
+        display: block;
+        border-radius: 12px;
+    }
+
+
+/*Nút giỏ hàng và người dùng góc trên bên trái*/
 .shop-menu {
     display: flex;
     align-items: center;
@@ -201,20 +396,6 @@ a#scrollUp {
                     border-radius: 12px;
                 }
 
-@media (max-width: 768px) {
-    .shop-menu ul li {
-        margin-left: 5px; /* Giảm khoảng cách giữa các mục */
-    }
-
-        .shop-menu ul li a p {
-            display: none; /* Ẩn phần văn bản */
-        }
-
-        .shop-menu ul li a img {
-            width: 24px; /* Giảm kích thước của icon */
-        }
-}
-
 
 /*************************
 *******Footer CSS******
@@ -237,25 +418,23 @@ a#scrollUp {
     }
 
 .single-widget {
-    flex:1;
+
     min-width: 210px;
     margin-bottom: 20px;
 }
 
     .single-widget h2 {
-        color: #666663;
-        font-family: 'Roboto', sans-serif;
+        color: black;
         font-size: 16px;
         font-weight: 500;
         margin-bottom: 22px;
         text-transform: uppercase;
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 300;
     }
 
     .single-widget ul li a {
         color: #8C8C88;
-        font-family: 'Roboto', sans-serif;
         font-size: 17px;
         font-weight: 300;
         padding: 3px 0 0 0;
@@ -264,13 +443,12 @@ a#scrollUp {
     }
 
         .single-widget ul li a:hover {
-            background: none;
+            background-color:transparent;
             padding-bottom: 7px;
             font-size: 20px;
         }
 
 .map-container {
-    flex: 1;
     min-width: 200px;
     margin-bottom: 20px;
 }
@@ -288,61 +466,8 @@ a#scrollUp {
     bottom: ;
     left: -40px;
     border: 1px solid #c8d6b9; /* Đường viền mờ của ô*/
-    border-radius: 12px; /* Ensure iframe corners are rounded */
+    border-radius: 12px; 
 }
-@media (max-width: 1200px) {
-    .map-container {
-        bottom: -10px; /* Adjust aspect ratio if needed */
-        left: 20px;
-        max-width: 100px;
-        max-height: 100px;
-    }
-
-    .responsive-map {
-        max-width: 250px;
-        max-height: 200px;
-    }
-}
-@media (max-width: 1000px) {
-    .map-container {
-        bottom: -30px; /* Adjust aspect ratio if needed */
-        left: 20px;
-        max-width: 100px;
-        max-height: 100px;
-    }
-
-    .responsive-map {
-        max-width: 190px;
-        max-height: 150px;
-    }
-}
-
-@media (max-width: 768px) {
-    .footer-widget .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .single-widget {
-        text-align: center;
-    }
-    .map-container {
-        bottom: 35px; /* Adjust aspect ratio if needed */
-        left: 50px;
-        max-width: 100px;
-        max-height: 100px;
-    }
-
-    .responsive-map {
-        max-width: 180px;
-        max-height: 150px;
-    }
-}
-
-
-/*************************
-******* Home ******
-**************************/
 
 
 
@@ -398,276 +523,6 @@ a#scrollUp {
 /*CSS internal trong Login.cshtml*/
 
 /*************************
-*******Cart CSS******
-**************************/
-
-#do_action {
-    margin-bottom: 50px;
-}
-
-.breadcrumbs {
-    position: relative;
-}
-
-    .breadcrumbs .breadcrumb {
-        background: transparent;
-        margin-bottom: 75px;
-        padding-left: 0;
-    }
-
-        .breadcrumbs .breadcrumb li a {
-            background: #FE980F;
-            color: #FFFFFF;
-            padding: 3px 7px;
-        }
-
-            .breadcrumbs .breadcrumb li a:after {
-                content: "";
-                height: auto;
-                width: auto;
-                border-width: 8px;
-                border-style: solid;
-                border-color: transparent transparent transparent #FE980F;
-                position: absolute;
-                top: 11px;
-                left: 48px;
-            }
-
-        .breadcrumbs .breadcrumb > li + li:before {
-            content: " ";
-        }
-
-#cart_items .cart_info {
-    border: 1px solid #E6E4DF;
-    margin-bottom: 50px
-}
-
-
-    #cart_items .cart_info .cart_menu {
-        background: #FE980F;
-        color: #fff;
-        font-size: 16px;
-        font-family: 'Roboto', sans-serif;
-        font-weight: normal;
-    }
-
-    #cart_items .cart_info .table.table-condensed thead tr {
-        height: 51px;
-    }
-
-
-    #cart_items .cart_info .table.table-condensed tr {
-        border-bottom: 1px solid#F7F7F0
-    }
-
-        #cart_items .cart_info .table.table-condensed tr:last-child {
-            border-bottom: 0
-        }
-
-.cart_info table tr td {
-    border-top: 0 none;
-    vertical-align: inherit;
-}
-
-
-#cart_items .cart_info .image {
-    padding-left: 30px;
-}
-
-
-#cart_items .cart_info .cart_description h4 {
-    margin-bottom: 0
-}
-
-    #cart_items .cart_info .cart_description h4 a {
-        color: #363432;
-        font-family: 'Roboto',sans-serif;
-        font-size: 20px;
-        font-weight: normal;
-    }
-
-#cart_items .cart_info .cart_description p {
-    color: #696763
-}
-
-
-#cart_items .cart_info .cart_price p {
-    color: #696763;
-    font-size: 18px
-}
-
-
-#cart_items .cart_info .cart_total_price {
-    color: #FE980F;
-    font-size: 24px;
-}
-
-.cart_product {
-    display: block;
-    margin: 15px -70px 10px 25px;
-}
-
-.cart_quantity_button a {
-    background: #F0F0E9;
-    color: #696763;
-    display: inline-block;
-    font-size: 16px;
-    height: 28px;
-    overflow: hidden;
-    text-align: center;
-    width: 35px;
-    float: left;
-}
-
-
-.cart_quantity_input {
-    color: #696763;
-    float: left;
-    font-size: 16px;
-    text-align: center;
-    font-family: 'Roboto',sans-serif;
-}
-
-
-.cart_delete {
-    display: block;
-    margin-right: -12px;
-    overflow: hidden;
-}
-
-
-    .cart_delete a {
-        background: #F0F0E9;
-        color: #FFFFFF;
-        padding: 5px 7px;
-        font-size: 16px
-    }
-
-        .cart_delete a:hover {
-            background: #FE980F
-        }
-
-
-.bg h2.title {
-    margin-right: 0;
-    margin-left: 0;
-    margin-top: 0;
-}
-
-.heading h3 {
-    color: #363432;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.heading p {
-    color: #434343;
-    font-size: 16px;
-    font-weight: 300;
-}
-
-
-#do_action .total_area {
-    padding-bottom: 18px !important;
-}
-
-#do_action .total_area, #do_action .chose_area {
-    border: 1px solid #E6E4DF;
-    color: #696763;
-    padding: 30px 25px 30px 0;
-    margin-bottom: 80px;
-}
-
-.total_area span {
-    float: right;
-}
-
-.total_area ul li {
-    background: #E6E4DF;
-    color: #696763;
-    margin-top: 10px;
-    padding: 7px 20px;
-}
-
-
-.user_option label {
-    color: #696763;
-    font-weight: normal;
-    margin-left: 10px;
-}
-
-
-.user_info {
-    display: block;
-    margin-bottom: 15px;
-    margin-top: 20px;
-    overflow: hidden;
-}
-
-    .user_info label {
-        color: #696763;
-        display: block;
-        font-size: 15px;
-        font-weight: normal;
-    }
-
-    .user_info .single_field {
-        width: 31%
-    }
-
-        .user_info .single_field.zip-field input {
-            background: transparent;
-            border: 1px solid#F0F0E9
-        }
-
-    .user_info > li {
-        float: left;
-        margin-right: 10px
-    }
-
-        .user_info > li > span {
-        }
-
-    .user_info input, select, textarea {
-        background: #F0F0E9;
-        border: 0;
-        color: #696763;
-        padding: 5px;
-        width: 100%;
-        border-radius: 0;
-        resize: none
-    }
-
-    .user_info select:focus {
-        border: 0
-    }
-
-
-.chose_area .update {
-    margin-left: 40px;
-}
-
-.update, .check_out {
-    background: #FE980F;
-    border-radius: 0;
-    color: #FFFFFF;
-    margin-top: 18px;
-    border: none;
-    padding: 5px 15px;
-}
-
-.update {
-    margin-left: 40px;
-}
-
-.check_out {
-    margin-left: 20px
-}
-
-
-
-
-/*************************
 *******Product CSS******
 **************************/
 
@@ -679,7 +534,7 @@ a#scrollUp {
         color: black;
         font-family: 'Roboto', sans-serif;
         font-size: 30px;
-        font-weight: 700;
+        font-weight: 400;
         text-transform: uppercase;
         margin: auto;
         padding: 30px;
@@ -858,14 +713,14 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
     .products {
         grid-template-columns: repeat(2, 1fr); /* Một cột cho màn hình từ 480px trở xuống */
     }
 
     ul.products li img {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
     }
 
     .btn-default {
@@ -881,9 +736,9 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
     }
 }
 
-@media (max-width: 280px) {
+@media (max-width: 340px) {
     .products {
-        grid-template-columns: repeat(1, 1fr); /* Một cột cho màn hình từ 480px trở xuống */
+        grid-template-columns: repeat(2, 1fr); /* Một cột cho màn hình từ 480px trở xuống */
     }
 
     ul.products li img {
@@ -965,113 +820,6 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
 
 
 
-/*************************
-*******Sidebar moblie CSS******
-**************************/
-
-/*menu sidebar (đang test)*/
-/*sidebar menu*/
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px; /*Cho qua trái để ẩn khỏi màn hình, khi kích hoạt thì sẽ đi từ trái sang*/
-    width: 250px;
-    height: 500%;
-    background-color: #f3f2ec;
-    overflow-y: auto;
-    transition: left 0.3s ease-in-out;
-    z-index: 1000;
-    padding-top: 10px;
-    font-size: 20px;
-    border-radius: 0 4px 0 4px;
-}
-
-    .sidebar h2 {
-        list-style-type: none;
-        padding: 20px;
-        text-align: center;
-        color: #252a2b;
-        border-bottom: 1px solid #b08856;
-    }
-
-    .sidebar ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-        .sidebar ul li {
-            padding: 15px;
-            text-align: left;
-        }
-
-            .sidebar ul li a {
-                color: #696763;
-                text-decoration: none;
-                display: block;
-                padding: 10px;
-            }
-
-                .sidebar ul li a:hover {
-                    background-color: #c0bfba;
-                    border-radius: 12px;
-                }
-    /* Kích hoạt sidebar */
-    .sidebar.active {
-        left: 0;
-        width: 350px;
-    }
-
-/* Đè lên khi sidebar được mở */
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    display: none;
-    /*Hiệu ứng xóa phông, để cho đẹp chứ không ổn cho hiệu năng cho lắm...*/
-    /*backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);*/ /*Đảm bảo hỗ trợ cho các trình duyệt Webkit*/
-}
-    /*Đè lên khi sidebar được kích hoạt*/
-    .sidebar-overlay.active {
-        display: block;
-    }
-
-/*Nút menu sidebar*/
-.navbar-toggle {
-    background: none;
-    padding: 3px 5px 3px 5px;
-    margin: 0;
-    font-size: 16px;
-    top: -0px;
-    cursor: pointer;
-    display: none;
-    border-radius: 4px;
-    transition: border-radius 0.25s ease-in-out; /* Thời gian chuyển đổi và hiệu ứng chuyển động */
-}
-
-    .navbar-toggle:hover {
-        background-color: #f3f2ec;
-        border-radius: 12px;
-    }
-
-    .navbar-toggle .icon-bar {
-        width: 22px;
-        height: 4px;
-        background-color: #111;
-        margin: 6px 0;
-        display: block;
-        border-radius: 12px;
-    }
-
-@media (max-width: 1300px) {
-    .navbar-toggle {
-        display: block;
-    }
-}
 
 
 
@@ -1110,3 +858,14 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
         right: auto;
     }
 }
+
+
+
+
+
+
+
+
+
+
+

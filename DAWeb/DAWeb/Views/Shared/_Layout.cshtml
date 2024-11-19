@@ -42,90 +42,116 @@
         <!--header-->
         <div class="header-top">
             <!--header_top-->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
 
-                <!--Sidebar-->
-                <div id="sidebar" class="sidebar">
-                    <h2>MENU</h2>
-                    <ul>
-                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 2 })">GIÀY NIKE</a></li>
-                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 3 })">GIÀY BALENCIAGA</a></li>
-                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 4 })">GIÀY DIOR</a></li>
-                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 5 })">GIÀY ADIDAS</a></li>
-                    </ul>
-                </div>
+            <!--Menu Sidebar-->
+            <div class="sidebar" id="sidebar">
+                <h2>MENU</h2>
+                <ul>
+                    <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 2 })">GIÀY NIKE</a></li>
+                    <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 3 })">GIÀY BALENCIAGA</a></li>
+                    <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 4 })">GIÀY DIOR</a></li>
+                    <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 5 })">GIÀY ADIDAS</a></li>
+                </ul>
+            </div>
 
-                <!--Đè lên nền background để làm mờ phần nền sau -->
-                <div class="sidebar-overlay"></div>
+            <!--Overlay-->
+            <div class="sidebar-overlay"></div>
 
 
 
-                <!--Các danh mục sản phẩm trên header-->
-                <div class="mainmenu pull-left">
-                    <ul class="nav navbar-nav collapse navbar-collapse">
-                        <li>@Html.ActionLink("SHOP", "Index", "Home")</li>
-                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 2 })">NIKE</a></li>
-                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 3 })">BALENCIAGA</a></li>
-                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 4 })">DIOR</a></li>
-                        <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 5 })">ADIDAS</a></li>
+            <!--Các danh mục sản phẩm trên header-->
+            <div class="mainmenu pull-left">
+                <ul class="nav navbar-nav collapse navbar-collapse">
+                    <li>@Html.ActionLink("SHOP", "Index", "Home")</li>
+                    <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 2 })">NIKE</a></li>
+                    <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 3 })">BALENCIAGA</a></li>
+                    <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 4 })">DIOR</a></li>
+                    <li><a href="@Url.Action("SanPhamTheoDanhMuc", "Product", new { categoryId = 5 })">ADIDAS</a></li>
 
-                    </ul>
-                </div>
-    
+                </ul>
+            </div>
 
-                <div class="search_box pull-right">
-                    @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+
+
+
+            <!--Ô tìm kiếm khi chưa vào trạng thái sidebar-->
+            <div class="search_box">
+                @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+                {
+                    <input type="text" name="keyword" placeholder="Tìm kiếm sản phẩm..." />
+                    <button class="search_box button"><i class="fa fa-search"></i></button>
+                }
+            </div>
+
+
+
+
+            <!--Nút mở sidebar ô tìm kiếm-->
+            <button class="search-button" id="searchToggle">
+                <span>Tìm kiếm</span>
+                <i class="fa fa-search"></i>
+            </button>
+
+            <!--Ô tìm kiếm sidebar-->
+            <div class="search-sidebar" id="searchSidebar">
+                <h2>Tìm kiếm</h2>
+                @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+                {
+                    <input type="text" name="keyword" placeholder="Tìm kiếm sản phẩm..." />
+                    <button class="search-sidebar-button"><i class="fa fa-search"></i></button>
+                }
+            </div>
+
+            <!--Overlay-->
+            <div class="sidebar-overlay" id="overlay"></div>
+
+
+
+            <!--Các nút Giỏ hàng và nút Người dùng-->
+            <div class="shop-menu">
+                <ul class="navbar">
+                    <li>
+                        <a href="@Url.Action("Index", "Cart")">
+                            <img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/shopping-cart.png" />
+                            <p>Giỏ hàng</p>
+                            <span class="badge badge-light" style="position: relative; top: -10px;  background-color: white; color: red;">
+                                @ViewBag.CartItemCount
+                            </span>
+                        </a>
+
+                    </li>
+
+                    @if (Session["userLogin"] == null)
                     {
-                        <input type="text" name="keyword" placeholder="Tìm kiếm" />
-                        <button class="search_box button"><i class="fa fa-search"></i></button>
-                    }
-                </div>
-
-           
-
-                <div class="shop-menu">
-                    <ul class="navbar">
                         <li>
-                            <a href="@Url.Action("Index", "Cart")">
-                                <img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/shopping-cart.png" />
-                                <p>Giỏ hàng</p>
-                                <span class="badge badge-light" style="position: relative; top: -10px;  background-color: white; color: red;">
-                                    @ViewBag.CartItemCount
-                                </span>
+                            <a href="@Url.Action("Login", "User")" @*style="display: block; width: 100%; height: 100%;"*@>
+                                <img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/login.png" />
+                                <p>Đăng nhập</p>
                             </a>
-
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="@Url.Action("UserDetails", "User")">
+                                <img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/user.png" />
+                                @Session["userLogin"]
+                            </a>
                         </li>
 
-                        @if (Session["userLogin"] == null)
-                        {
-                            <li>
-                                <a href="@Url.Action("Login", "User")" @*style="display: block; width: 100%; height: 100%;"*@>
-                                    <img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/login.png" />
-                                    <p>Đăng nhập</p>
-                                </a>
-                            </li>
-                        }
-                        else
-                        {
-                            <li>
-                                <a href="@Url.Action("UserDetails", "User")">
-                                    <img style="width:30px;padding:2px;margin-top:3px;" src="~/images/icons/user.png" />
-                                    @Session["userLogin"]
-                                </a>
-                            </li>
-
-                            //Dùng để Logout, đã ném qua hàm UserDetails
-                            //<li style="top:-10px;">@Html.ActionLink("Đăng Xuất", "Logout", "User")</li>
-                        }
-                    </ul>
-                </div>
+                        //Dùng để Logout, đã ném qua hàm UserDetails
+                        //<li style="top:-10px;">@Html.ActionLink("Đăng Xuất", "Logout", "User")</li>
+                    }
+                </ul>
+            </div>
 
 
         </div>
@@ -133,7 +159,7 @@
     </header><!--/header-->
 
 
- 
+
 
 
 
@@ -172,7 +198,7 @@
                         <div class="single-widget">
                             <h2>Liên hệ</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Địa chỉ: Huflit Hóc Môn</a></li>
+                                <li><a href="#">Địa chỉ: Hóc Môn</a></li>
                                 <li><a href="#">Số điện thoại: 123</a></li>
                                 <li><a href="#">Email: ...</a></li>
                                 <li><a href="#">Câu hỏi thường gặp</a></li>
@@ -200,10 +226,12 @@
     <script src="~/js/price-range.js"></script>
     <script src="~/js/jquery.prettyPhoto.js"></script>
     <script src="~/js/main.js"></script>
-    <script src="~/Scripts/maxLengthText.js"></script>
-    <script src="~/Scripts/menuButton.js"></script>
-    <script src="~/Scripts/SideBar.js"></script>
-    <script src="~/Scripts/SlidesBanner.js"></script>
-    <script src="~/Scripts/TEST.js"></script>
+
+    <!--Scripts dùng để giới hạn số chữ-->
+    <script src="~/Scripts/MaxLengthText.js"></script>
+    <!--Menu cạnh bên-->
+    <script src="~/Scripts/MenuSideBar.js"></script>
+    <!--Ô tìm kiếm cạnh bên-->
+    <script src="~/Scripts/SearchSideBar.js"></script>
 </body>
 </html>

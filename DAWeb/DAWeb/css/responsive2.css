@@ -27,7 +27,35 @@
     .mainmenu ul li a.active {
         padding-left: 15px;
     }
+	.navbar-toggle {
+		display: block;
+	}
+	.map-container {
+		bottom: -10px; /* Adjust aspect ratio if needed */
+		left: 20px;
+		max-width: 100px;
+		max-height: 100px;
+	}
+
+	.responsive-map {
+		max-width: 250px;
+		max-height: 200px;
+	}
 }
+@media (max-width: 1000px) {
+	.map-container {
+		bottom: -30px; /* Adjust aspect ratio if needed */
+		left: 20px;
+		max-width: 100px;
+		max-height: 100px;
+	}
+
+	.responsive-map {
+		max-width: 190px;
+		max-height: 150px;
+	}
+}
+
 
 /* md */
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -61,495 +89,121 @@
 }
 
 
-/* sm */
-@media (min-width: 768px) and (max-width: 991px) {
-   
-.shop-menu ul li a{
-	padding-left: 0;
-}
-
-#slider-carousel .item{
-	padding-left: 30px;
-}
-
-.item h2{
-	font-size: 24px;
-}
-
-.girl{
-	margin-left: 0;
-}
-
-.pricing{
-	width: 100px;
-}
-
-
-.shipping img{
-	width: 100%;
-}
-
-.slider.slider-horizontal{
-	width: 100% !important;
-}
-
-.tab-pane .col-sm-3, .features_items .col-sm-4{
-	width: 50%;
-}
-
-.footer-widget .col-sm-2{
-	width: 33%;
-	display: inline-block;
-	margin-bottom: 50px;
-}
-
-.footer-widget .col-sm-3{
-	display: inline-block;
-	width: 40%;
-}
-
-#similar-product .carousel-inner .item img{
-	width: 60px;
-	margin-left: 0;
-}
-
-.product-information span span{
-	display: block;
-	width: 100%;
-}
-
-.product-information .cart{
-	margin-left: 0;
-	margin-top: 15px;
-}
-
-.item-control i{
-	font-size: 12px;
-	padding: 5px 6px;
-}
-
-#cart_items .cart_info .cart_description h4, #cart_items .cart_info .cart_description p{
-	text-align: center;
-}
-
-.companyinfo h2{
-	font-size: 20px;
-}
-
-.address {
-	margin-top: 48px;
-	margin-left: 20px;
-}
-
-.address p {
-	font-size: 12px;
-	top: 5px;
-}
-
-}
 
 /* xs */
-@media (max-width: 767px) {
-
-.header_top .col-sm-6:first-child{
-	display: inline-block;
-	float: left;
-}
-
-.header_top .col-sm-6:last-child{
-	display: inline-block;
-	float: right;
-}
-
-.header-middle .col-sm-4 {
-	display: inline-block;
-	overflow: inherit;
-	width: 100%;
-}
-
-.social-icons ul li a i {
-	padding: 8px 10px;
-}
-
-.shop-menu.pull-right{
-	float: none !important;
-}
-
-.shop-menu .nav.navbar-nav{
-	margin-left: -30px;
-}
-
-.header-bottom .col-sm-9{
-	display: inline-block;
-	width: 100%;
-}
-
-.mainmenu{
-	width: 100%;
-}
-
-.mainmenu ul li{
-    padding-top: 0px;
-}
-	.mainmenu ul li:not(:first-child) {
-		display: none; /* Ẩn mọi đường link khác ngoại trừ link SHOP */
+@media (max-width: 768px) {
+	/*Nút giỏ hàng và người dùng góc trên bên trái*/
+	.shop-menu ul li {
+		margin-left: 5px; /* Giảm khoảng cách giữa các mục */
 	}
 
-/*.mainmenu ul li:last-child{
-	padding-bottom: 15px;
-}*/
-
-.mainmenu ul li  a{
-	color: #111;
-}
-
-.navbar-collapse.in{
-	overflow: inherit;
-}
-
-.mainmenu ul li a.active{
-	padding-left: 15px;
-}
-
-.dropdown .fa-angle-down{
-	display: none;
-}
-
-ul.sub-menu{
-  position: relative;
-  width: auto;
-  display: block;
-  background: transparent;
-  box-shadow: none;
-  top: 0;
-}
-
-.sub-menu li{
-	background: transparent;
-}
-
-.mainmenu .navbar-nav li ul.sub-menu li{
-	background: transparent;
-	padding-bottom:0;
-}
-
-.nav.navbar-nav > li:hover > ul.sub-menu{
-  -webkit-animation: none;
-  -moz-animation: none;
-  -ms-animation: none;
-  -o-animation: none;
-  animation: none;
-  box-shadow: none;
-}
-
-.header-bottom{
-	position: relative;
-}
-
-.header-bottom .col-sm-3 {
-	display: inline-block;
-	position: absolute;
-	left: 0;
-	top: 38px;
-}
-
-#slider-carousel .item{
-	padding-left: 0;
-}
-
-.shipping{
-	margin-bottom: 25px;
-}
-
-.pricing{
-	width: 100px;
-}
-
-.footer-top .col-sm-7 .col-sm-3{
-	width: 50%;
-	float: left;
-}
-
-.footer-widget .col-sm-2 {
-	width: 28%;
-	display: flex;
-	margin-bottom: 50px;
-	margin-top: 0;
-	float: left;
-	margin-left: 30px;
-}
-
-.companyinfo{
-	text-align: center;
-}
-
-.footer-widget .col-sm-3{
-	display: inline-block;
-}
-
-.single-widget{
-
-}
-
-.product-information span {
-	display: block;
-}
-
-#similar-product {
-	margin-bottom: 40px;
-}
-
-.well{
-	display: inline-block;
-}
-
-}
-
-/* XS Portrait */
-@media (max-width: 480px) {
-
-.contactinfo{
-	text-align: center;
-}
-
-.contactinfo ul li a {
-	padding-right: 15px;
-	padding-left: 0;
-}
-
-.social-icons.pull-right{
-	float: none !important;
-	text-align: center;
-}
-
-.btn-group.pull-right, 
-.footer-bottom .pull-left, 
-.footer-bottom .pull-right, 
-.mainmenu.pull-left,
-.media.commnets .pull-left,
-.media-list .pull-left{
-	float: none !important;
-}
-
-.header_top .col-sm-6:first-child{
-	display: block;
-	float: none;
-}
-
-.header_top .col-sm-6:last-child{
-	display: block;
-	float: none;
-}
-
-.contactinfo .nav.nav-pills, .social-icons .nav.navbar-nav{
-	display: inline-block;
-}
-
-.logo{
-	text-align: center;
-	width: 100%;
-}
-
-.shop-menu ul li {
-	padding: 0;
-}
-
-.header-middle .col-sm-4{
-	text-align: center;
-	overflow: inherit;
-}
-
-.shop-menu .nav.navbar-nav {
-	margin-left: 0;
-}
-
-.btn-group>.btn-group:last-child>.btn:first-child{
-	margin-right: 0;
-}
-
-.header-bottom .col-sm-9{
-	display: inline-block;
-	width: 100%;
-}
-
-.mainmenu{
-	width: 100%;
-}
-
-	.mainmenu ul li {
-		padding-top: 0px;
-	}
-
-		.mainmenu ul li:not(:first-child) {
-			display: none; /* Ẩn mọi đường link khác ngoại trừ link SHOP */
+		.shop-menu ul li a p {
+			display: none; /* Ẩn phần văn bản */
 		}
-/*
-.mainmenu ul li:last-child{
-	padding-bottom: 15px;
-}
-*/
-.mainmenu ul li a {
-	color: #111;
-}
 
-.navbar-collapse.in{
-	overflow: inherit;
-}
-
-.mainmenu ul li a.active{
-	padding-left: 15px;
-}
-
-.dropdown .fa-angle-down{
-	display: none;
-}
-
-ul.sub-menu{
-  position: relative;
-  width: auto;
-  display: block;
-  background: transparent;
-  box-shadow: none;
-  top: 0;
-}
+		.shop-menu ul li a img {
+			width: 24px; /* Giảm kích thước của icon */
+		}
 
 
-.mainmenu .navbar-nav li ul.sub-menu li{
-	background: transparent;
-	padding-bottom:0;
+	/*Thu nhỏ ô tìm kiếm lại trước khi vào trạng thái sidebar*/
+	.search_box {
+		max-width: 250px; /* Chiều rộng nhỏ hơn để vừa với không gian */
+	}
+
+		.search_box input[type="text"] {
+			width: 180px; /* Đặt chiều rộng nhỏ hơn cho ô tìm kiếm */
+			padding: 10px 30px 10px 10px; /* Điều chỉnh padding để cân đối */
+		}
+
+		.search_box button {
+			left: 150px;
+		}
+
+
+	/* Hiển thị sidebar tìm kiếm khi màn hình nhỏ hơn 767px */
+	.search_box {
+		display: none; /* Ẩn ô tìm kiếm gốc */
+	}
+
+	.search-navbar-toggle {
+		display: block; /* Hiển thị nút toggle */
+	}
+
+	.search-sidebar {
+		display: block; /* Hiển thị sidebar tìm kiếm */
+	}
+
+
+
+
+
+	.footer-widget .container {
+		flex-direction: column;
+		align-items: center;
+	}
+	.single-widget h2 {
+		font-size: 24px;
+	}
+	.single-widget ul li a {
+		padding:10px;
+		font-size: 24px;
+	}
+	.single-widget {
+		text-align: center;
+		padding:10px 0 20px 0;
+		border-bottom: 1px solid #b08856;
+	}
+		.single-widget ul li a:hover {
+			background: none;
+			padding-bottom: 15px;
+			font-size: 28px;
+		}
+	.map-container {
+		display:none;
+	}
+}
+@media (min-width: 768px) {
+	.search_box {
+		display: block; /* Hiển thị ô tìm kiếm gốc */
+	}
+
+	.search-navbar-toggle {
+		display: none; /* Ẩn nút toggle */
+	}
+
+	.search-button {
+		display: none;
+	}
 }
 
-.nav.navbar-nav > li:hover > ul.sub-menu{
-  -webkit-animation: none;
-  -moz-animation: none;
-  -ms-animation: none;
-  -o-animation: none;
-  animation: none;
-  box-shadow: none;
-}
+	/* XS Portrait */
+	@media (max-width: 480px) {
+		.sidebar h2 {
+			list-style-type: none;
+			padding: 20px;
+			text-align: center;
+			color: #252a2b;
+			border-bottom: 1px solid #b08856;
+			font-size: 22px;
+		}
 
+		.sidebar ul li {
+			padding: 15px;
+			text-align: left;
+			border-bottom: 1px solid #b08856;
+		}
 
-.item{
-	padding-left: 0;
-}
+			.sidebar ul li a {
+				color: #696763;
+				text-decoration: none;
+				display: block;
+				padding: 10px;
+				font-size: 14px;
+			}
 
-.item h1{
-	font-size: 30px;
-	margin-top: 0;
-}
-
-.item h2{
-	font-size: 20px;
-}
-
-.pricing{
-	width: 70px;
-}
-
-.category-tab ul li a{
-	font-size: 12px;
-}
-
-.companyinfo h2, .companyinfo p{
-	text-align: center;
-}
-
-.video-gallery{
-	margin-top: 30px;
-}
-
-.footer-bottom p{
-	font-size: 13px;
-	text-align: center;
-}
-
-.footer-widget .col-sm-2 {
-	width: 50%;
-	display: flex;
-	margin-bottom: 50px;
-	margin-top: 0;
-	float: left;
-	padding-right: 0;
-	padding-left: 30px;
-	margin-left: 0;
-}
-
-.single-widget {
-	padding-left: 0;
-}
-
-.features_items{
-	margin-top: 30px;
-}
-
-.category-tab .nav-tabs li{
-	float: none;
-}
-
-#similar-product .carousel-inner .item img{
-	margin-left: 4px;
-}
-
-.product-information{
-	margin-top: 40px;
-}
-
-#reviews p, .blog-post-area .single-blog-post p{
-	text-align: justify;
-}
-
-#reviews form span input{
-	width: 100%;
-	margin-bottom: 20px;
-}
-
-#reviews form span input:last-child{
-	margin-left: 0;
-}
-
-.blog-post-area .single-blog-post h3{
-	font-size: 14px;
-}
-
-.blog-post-area .post-meta ul li{
-	margin-right: 7px;
-}
-
-.shipping{
-	margin-bottom: 20px;
-}
-
-.commnets{
-	padding: 0;
-}
-
-.content-404 h1{
-	font-size: 30px;
-}
-
-.content-404 h2 a{
-	font-size: 20px;
-}
-
-.order-message{
-	display: inline-block;
-}
-
-.response-area .media img{
-	width: auto;
-}
-
-.sinlge-post-meta li{
-	margin-bottom: 10px;
-}
-
-.product-information{
-	padding-left: 0;
-	text-align: center;
-}
-
-.product-information span span{
-	float: none;
-}
-
-}
+		.sidebar.active {
+			left: 0;
+			width: 210px;
+		}
+	}
