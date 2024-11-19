@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Danh Mục</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -18,17 +18,18 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenDanhMuc)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaDanhMuc }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaDanhMuc }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaDanhMuc })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenDanhMuc)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaDanhMuc }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaDanhMuc }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaDanhMuc })
+            </td>
+        </tr>
+    }
 
 </table>

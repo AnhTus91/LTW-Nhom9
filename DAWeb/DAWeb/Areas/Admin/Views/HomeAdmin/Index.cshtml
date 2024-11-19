@@ -1,16 +1,74 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+﻿@{
+    ViewBag.Title = "Index";  // Đặt tiêu đề trang là "Index"
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";  // Sử dụng layout admin cho trang này
 }
 
+<div class="dashboard-container">
+    <h1 class="page-title">Tổng Quan</h1>  <!-- Tiêu đề của trang, hiển thị "Tổng Quan" -->
+    <div class="stats-boxes">
+        <div class="stats-box">
+            <h3>Số sản phẩm</h3>  <!-- Tiêu đề cho ô số sản phẩm -->
+            <p>@ViewBag.demSanPham</p>  <!-- Hiển thị số lượng sản phẩm từ ViewBag -->
+        </div>
+        <div class="stats-box">
+            <h3>Số người dùng</h3>  <!-- Tiêu đề cho ô số người dùng -->
+            <p>@ViewBag.demUser</p>  <!-- Hiển thị số lượng người dùng từ ViewBag -->
+        </div>
+        <div class="stats-box">
+            <h3>Số đơn hàng</h3>  <!-- Tiêu đề cho ô số đơn hàng -->
+            <p>@ViewBag.demDonHang</p>  <!-- Hiển thị số lượng đơn hàng từ ViewBag -->
+        </div>
+    </div>
+</div>
 
-<h2>Số sản phẩm: @ViewBag.demSanPham</h2>
-<h2>Số user: @ViewBag.demUser </h2>
-<h2>Số đơn hàng: @ViewBag.demDonHang</h2>
-
-@Scripts.Render("~/bundles/admin/jquery")
 <script>
-
     $('.tq').addClass('active');
 </script>
+
+@* ////////////////////////////////////////CSS//////////////////////////////////////// *@
+<style>
+    .dashboard-container {
+        padding: 20px; /* Thêm khoảng cách 20px xung quanh khối nội dung */
+    }
+
+    .page-title {
+        font-size: 40px; /* Đặt kích thước chữ cho tiêu đề trang là 28px */
+        color: #333; /* Màu chữ là #333 (xám tối) */
+        font-weight: bold; /* Đặt kiểu chữ là đậm */
+        margin-bottom: 30px; /* Thêm khoảng cách 30px phía dưới tiêu đề */
+    }
+
+    .stats-boxes {
+        display: flex; /* Sử dụng flexbox để sắp xếp các ô thống kê theo hàng ngang */
+        gap: 20px; /* Thêm khoảng cách 20px giữa các ô */
+        justify-content: space-between; /* Sắp xếp các ô sao cho có khoảng cách đều giữa các ô */
+    }
+
+    .stats-box {
+        background-color: #fff; /* Màu nền của mỗi ô thống kê là màu trắng */
+        padding: 20px; /* Thêm khoảng cách 20px bên trong mỗi ô */
+        border-radius: 8px; /* Bo tròn các góc của mỗi ô với bán kính 8px */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ nhẹ cho ô */
+        text-align: center; /* Canh giữa nội dung trong mỗi ô */
+        flex: 1; /* Mỗi ô chiếm 1 phần không gian đều trong flex container */
+    }
+
+        .stats-box h3 {
+            font-size: 25px; /* Kích thước chữ cho tiêu đề trong mỗi ô thống kê là 18px */
+            color: #555; /* Màu chữ cho tiêu đề là #555 (màu xám sáng) */
+            margin-bottom: 10px; /* Thêm khoảng cách 10px dưới tiêu đề */
+        }
+
+        .stats-box p {
+            font-size: 30px; /* Kích thước chữ cho số liệu là 24px */
+            color: #2c3e50; /* Màu chữ cho số liệu là #2c3e50 (màu xanh đen) */
+            font-weight: bold; /* Làm chữ số liệu đậm */
+        }
+
+        /* Thêm hiệu ứng hover khi di chuột vào ô thống kê */
+        .stats-box:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Tăng độ bóng khi hover */
+            transform: translateY(-5px); /* Di chuyển ô lên trên 5px khi hover */
+            transition: all 0.3s ease; /* Thêm hiệu ứng chuyển động mượt mà trong 0.3 giây */
+        }
+</style>

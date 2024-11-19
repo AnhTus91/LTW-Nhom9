@@ -236,7 +236,6 @@ a#scrollUp {
 }
 /* Kích hoạt sidebar */
 .search-sidebar.active {
-    padding: 10px 5px 0 5px;
     right: 0;
 }
 
@@ -463,10 +462,10 @@ a#scrollUp {
 
 .responsive-map {
     position: absolute;
-    bottom: ;
+    bottom:;
     left: -40px;
-    border: 1px solid #c8d6b9; /* Đường viền mờ của ô*/
-    border-radius: 12px; 
+    border: 1px solid #b08856; /* Đường viền mờ của ô*/
+    border-radius: 12px;
 }
 
 
@@ -641,7 +640,7 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
 
 @media (max-width: 1400px) {
     .products {
-        grid-template-columns: repeat(3, 1fr); /* Ba cột cho màn hình từ 1200px trở xuống */
+        grid-template-columns: repeat(3, 1fr); /* Ba cột cho màn hình từ 1400px trở xuống */
     }
 
     ul.products li img {
@@ -656,7 +655,7 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
 
 @media (max-width: 1050px) {
     .products {
-        grid-template-columns: repeat(2, 1fr); /* Hai cột cho màn hình từ 768px trở xuống */
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     ul.products li img {
@@ -683,7 +682,7 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
 
 @media (max-width: 640px) {
     .products {
-        grid-template-columns: repeat(2, 1fr); /* Một cột cho màn hình từ 480px trở xuống */
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     ul.products li img {
@@ -709,13 +708,13 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
     }
 
     ul.products li .product-top form.buy-now {
-        max-width: 220px;
+        max-width: 200px;
     }
 }
 
 @media (max-width: 480px) {
     .products {
-        grid-template-columns: repeat(2, 1fr); /* Một cột cho màn hình từ 480px trở xuống */
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     ul.products li img {
@@ -734,16 +733,19 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
     ul.products li .product-info .product-price {
         font-size: 14px;
     }
+    ul.products li .product-top form.buy-now {
+        max-width: 150px;
+    }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 360px) {
     .products {
-        grid-template-columns: repeat(2, 1fr); /* Một cột cho màn hình từ 480px trở xuống */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     ul.products li img {
-        width: 100px;
-        height: 100px;
+        width: 130px;
+        height: 130px;
     }
 
     .btn-default {
@@ -757,6 +759,36 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
     ul.products li .product-info .product-price {
         font-size: 14px;
     }
+    ul.products li .product-top form.buy-now {
+        max-width: 120px;
+    }
+
+}
+@media (max-width: 360px) {
+    .products {
+        grid-template-columns: 1fr; /* Một cột cho màn hình từ 360px trở xuống */
+    }
+
+    ul.products li img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .btn-default {
+        font-size: 12px;
+    }
+
+    ul.products li .product-info a.product-name {
+        font-size: 12px;
+    }
+
+    ul.products li .product-info .product-price {
+        font-size: 14px;
+    }
+
+    ul.products li .product-top form.buy-now {
+        max-width: 120px;
+    }
 }
 
 
@@ -765,68 +797,55 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
 
 
 
-/*Các trang dưới footer (đang test)
+    /*Các trang dưới footer (đang test)
 */ #PageInfo {
-    align-items: center; /* Căn giữa theo chiều dọc */
-    height: auto; /* Chiếm toàn bộ chiều cao màn hình */
-    padding: 0; /* Tạo khoảng cách xung quanh */
-}
-
-    #PageInfo h2 {
-        padding: 50px 100px 0 100px;
-        margin: 0px;
-        font-weight: bolder;
-    }
-
-    #PageInfo p {
-        padding: 0 100px 50px 100px;
-        font-size: 25px;
-        line-height: 1.8;
-    }
-
-        #PageInfo p i {
-            font-weight: bold;
-        }
-
-@media (max-width:1080px) {
-    #PageInfo {
-        padding: 100px 20px 20px 0px;
+        align-items: center; /* Căn giữa theo chiều dọc */
+        height: auto; /* Chiếm toàn bộ chiều cao màn hình */
+        padding: 0; /* Tạo khoảng cách xung quanh */
     }
 
         #PageInfo h2 {
-            padding: 40px 50px 0px 50px;
+            padding: 50px 100px 0 100px;
+            margin: 0px;
+            font-weight: bolder;
         }
 
         #PageInfo p {
-            padding: 0px 50px;
-            line-height: 1.9;
+            padding: 0 100px 50px 100px;
+            font-size: 25px;
+            line-height: 1.8;
         }
-}
 
-@media (max-width:640px) {
-    #PageInfo h2 {
-        padding: 40px 20px 0px 20px;
+            #PageInfo p i {
+                font-weight: bold;
+            }
+
+    @media (max-width:1080px) {
+        #PageInfo {
+            padding: 100px 20px 20px 0px;
+        }
+
+            #PageInfo h2 {
+                padding: 40px 50px 0px 50px;
+            }
+
+            #PageInfo p {
+                padding: 0px 50px;
+                line-height: 1.9;
+            }
     }
 
-    #PageInfo p {
-        padding: 0px 20px;
+    @media (max-width:640px) {
+        #PageInfo h2 {
+            padding: 40px 20px 0px 20px;
+        }
+
+        #PageInfo p {
+            padding: 0px 20px;
+        }
     }
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 /*Các nút bên UserDetail.cshtml*/
 .button-container {
@@ -839,25 +858,9 @@ ul.products li .product-info { /*Thông tin tóm tắt sản phẩm*/
     right: 0;
 }
 
-    .logout-button a:hover {
-        /* ... các style khác ... */
-    }
 
-/* Responsive cho các nút */
-@media (max-width: 768px) {
-    .button-container a {
-        display: block; /* Chuyển thành block để xuống dòng */
-        width: 100%; /* Chiếm toàn bộ chiều rộng */
-        margin-bottom: 10px; /* Khoảng cách giữa các nút */
-        text-align: center; /* Căn giữa chữ */
-    }
 
-    .logout-button {
-        position: relative; /* Đưa nút "Đăng Xuất" về vị trí bình thường */
-        bottom: auto;
-        right: auto;
-    }
-}
+
 
 
 

@@ -137,7 +137,7 @@
 
 
 
-
+	/*Các ô widget dưới footer*/
 	.footer-widget .container {
 		flex-direction: column;
 		align-items: center;
@@ -162,6 +162,22 @@
 	.map-container {
 		display:none;
 	}
+
+
+
+	/*Các nút bên UserDetail.cshtml*/
+	.button-container a {
+		display: block; /* Chuyển thành block để xuống dòng */
+		width: 100%; /* Chiếm toàn bộ chiều rộng */
+		margin-bottom: 10px; /* Khoảng cách giữa các nút */
+		text-align: center; /* Căn giữa chữ */
+	}
+
+	.logout-button {
+		position: relative; /* Đưa nút "Đăng Xuất" về vị trí bình thường */
+		bottom: auto;
+		right: auto;
+	}
 }
 @media (min-width: 768px) {
 	.search_box {
@@ -175,6 +191,7 @@
 	.search-button {
 		display: none;
 	}
+
 }
 
 	/* XS Portrait */
@@ -205,5 +222,8 @@
 		.sidebar.active {
 			left: 0;
 			width: 210px;
+		}
+		.search-button span{
+			display:none;
 		}
 	}

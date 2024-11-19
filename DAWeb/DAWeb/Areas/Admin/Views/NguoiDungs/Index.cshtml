@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Người Dùng</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -30,30 +30,31 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.HoTen)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SoDienThoai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DiaChi)
-        </td>
-        <td>
-            <img width="100" src="@item.AnhDaiDien" />
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoDienThoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                <img width="100" src="@item.AnhDaiDien" />
 
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TaiKhoan.TenDangNhap)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.MaNguoiDung }) |
-            @Html.ActionLink("Details", "Details", new { id = item.MaNguoiDung }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.MaNguoiDung })
-        </td>
-    </tr>
-}
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaiKhoan.TenDangNhap)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaNguoiDung }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaNguoiDung }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaNguoiDung })
+            </td>
+        </tr>
+    }
 
 </table>

@@ -5,7 +5,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Trạng thái</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -27,26 +27,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayDat)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TongTien)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrangThai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NguoiDung.HoTen)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaDonHang }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaDonHang }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaDonHang })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NguoiDung.HoTen)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaDonHang }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaDonHang }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaDonHang })
+            </td>
+        </tr>
+    }
 
 </table>

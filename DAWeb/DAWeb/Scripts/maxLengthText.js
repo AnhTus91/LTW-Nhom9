@@ -11,7 +11,7 @@ const productNames = document.querySelectorAll('.product-name');
 
 // Áp dụng hàm truncateText cho từng phần tử
 productNames.forEach(productName => { //Xài hàm forEach để lướt hết các items trong productName
-    const truncatedText = maxLengthText(productName.textContent, 28); //Gọi lại hàm maxLengthText để rút gọn tên (nếu có)
+    const truncatedText = maxLengthText(productName.textContent, 28); //Gọi lại hàm maxLengthText để rút gọn tên xuống 28 kí tự (nếu nó dài hơn 28 kí tự)
     productName.textContent = truncatedText;
 });
 
